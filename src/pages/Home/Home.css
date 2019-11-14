@@ -1,0 +1,66 @@
+.logo {
+    height: 30px;
+    margin: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 30px;
+    line-height: 30px;
+    margin-left: 10px;
+}
+
+.logo-text {
+    margin: 10px;
+    color: #474747;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.logo-text-outside {
+    color: #474747;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.4;
+    float: left;
+    margin: 16px;
+}
+
+.logo-text-outside-lighter {
+    color: #474747;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.ant-menu-vertical > .ant-menu-item {
+    height: 60px;
+    line-height: 60px;
+}
+
+.ant-menu-inline > .ant-menu-item {
+    height: 60px;
+    line-height: 60px;
+}
+
+.ant-input-group {
+    line-height: 64px;
+}
+
+.ant-input {
+    height: 64px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 0 0 #fff;
+}
+
+.ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled) {
+    border: 0;
+    box-shadow: 0 0 0 #fff;
+}
+
+#input:focus {
+    box-shadow: 0 0 0 #fff;
+}
