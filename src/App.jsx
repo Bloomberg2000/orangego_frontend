@@ -30,6 +30,7 @@ class App extends React.Component {
         enquireScreen((b) => {
             this.setState({
                 isMobile: !!b,
+                searchBarShow: !b
             });
         });
     }
@@ -47,8 +48,11 @@ class App extends React.Component {
     render() {
         return (
             <Layout style={{minHeight: '100vh'}}>
-                <Sider breakpoint="sm" collapsedWidth="0" collapsible collapsed={this.state.collapsed}
-                       onCollapse={this.onCollapse} style={{zIndex:1000}}>
+                <Sider breakpoint={this.state.isMobile ? 'sm' : '-'}
+                       collapsedWidth={this.state.isMobile ? '0' : '80'}
+                       collapsible
+                       collapsed={this.state.collapsed}
+                       onCollapse={this.onCollapse} style={{zIndex: 1000}}>
                     <div className="logo">
                         <img className="logo-img" src={OrangeGoLogo} alt="logo"/>
                         {/* 收起时Sider后不显示品牌名 */}
@@ -105,8 +109,9 @@ class App extends React.Component {
                                 >
                                     {this.state.collapsed ?
                                         <div className="logo">
-                                            <img className="logo-img" src={OrangeGoLogo} alt="logo"/>
-                                            <span className="logo-text-outside">
+                                            {this.state.isMobile ?
+                                                <img className="logo-img" src={OrangeGoLogo} alt="logo"/> : null}
+                                            <span className="logo-text-outside" style={{margin:(this.state.isMobile)?"":"4px"}}>
                                         OrangeGo&nbsp;<span className="logo-text-outside-lighter">Movies</span>
                                     </span>
                                         </div>
@@ -147,8 +152,7 @@ class App extends React.Component {
                     </Footer>
                 </Layout>
             </Layout>
-        )
-            ;
+        );
     }
 }
 

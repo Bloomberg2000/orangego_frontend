@@ -4,18 +4,14 @@ import {Button, Col, Icon, Row} from "antd";
 import * as PropTypes from "prop-types";
 import Swiper from "swiper";
 import 'swiper/css/swiper.css'
-import {enquireScreen} from 'enquire-js';
 
 export default class Banner extends React.Component {
 
     static propTypes = {
         data: PropTypes.array,
-        isMobile: PropTypes.array,
-        screenWidth: PropTypes.number
     };
 
     state = {
-        isMobile: false,
         windowWidth: window.innerWidth
     };
 
@@ -29,47 +25,44 @@ export default class Banner extends React.Component {
         }
     }
 
+    onWindowResize = () => {
+        this.setState({
+            windowWidth: window.innerWidth
+        });
+    };
+
     // 监测屏幕变化
     componentDidMount() {
+        window.addEventListener('resize', this.onWindowResize);
+    }
 
-        window.onresize = () => {
-            this.setState({
-                windowWidth: window.innerWidth
-            });
-        };
-        enquireScreen((b) => {
-            this.setState({
-                isMobile: !!b,
-            });
-        });
-
+    componentWillUnmount() {
+        window.addEventListener('resize', this.onWindowResize);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         let slidesPreView = 0;
-        let slidesPerGroup = 4;
-        if (this.state.windowWidth >= 1600) {
-            slidesPreView = 4;
-            slidesPerGroup = 4;
-        } else if (this.state.windowWidth >= 1200) {
-            slidesPreView = 3;
-            slidesPerGroup = 3;
+        let slidesPerGroup = 1;
+        if (this.state.windowWidth >= 1200) {
+            slidesPreView = 3.25;
+            slidesPerGroup = 1;
         } else if (this.state.windowWidth >= 768) {
-            slidesPreView = 2;
-            slidesPerGroup = 2;
+            slidesPreView = 2.25;
+            slidesPerGroup = 1;
         } else {
-            slidesPreView = 1;
+            slidesPreView = 1.25;
             slidesPerGroup = 1;
         }
         this.swiper = new Swiper('.swiper-container', {
             slidesPerView: slidesPreView,
             slidesPerGroup: slidesPerGroup,
-            autoplay: {
-                delay: 5000,
-            },
             freeMode: false,
             direction: 'horizontal',//竖向轮播
-            loop: true
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-next',
+                prevEl: '.swiper-button-prev',
+            },
         })
     }
 
@@ -77,14 +70,7 @@ export default class Banner extends React.Component {
         return (
             <div id="BannerPage" style={{background: '#f7f7f7', padding: '0'}}>
                 <Row type="flex" justify="space-around" align="middle">
-                    <Col span={2} style={{textAlign: "center"}}>
-                        <Button shape="circle" onClick={() => {
-                            this.swiper.slidePrev();
-                        }}>
-                            <Icon type="left"/>
-                        </Button>
-                    </Col>
-                    <Col span={20} style={{textAlign: "center"}}>
+                    <Col span={24} style={{textAlign: "center",padding:'0 20px 0 20px'}}>
                         <div className="swiper-container">
                             <div className="swiper-wrapper">
                                 {
@@ -108,13 +94,20 @@ export default class Banner extends React.Component {
                                 }
                             </div>
                         </div>
-                    </Col>
-                    <Col span={2} style={{textAlign: "center"}}>
-                        <Button shape="circle" onClick={() => {
-                            this.swiper.slideNext();
-                        }}>
-                            <Icon type="right"/>
-                        </Button>
+                        <div className="swiper-button-prev">
+                            <Button className="swiper-custom-button" shape="circle" onClick={() => {
+                                this.swiper.slidePrev();
+                            }}>
+                                <Icon type="left"/>
+                            </Button>
+                        </div>
+                        <div className="swiper-button-next">
+                            <Button className="swiper-custom-button"  shape="circle" onClick={() => {
+                                this.swiper.slideNext();
+                            }}>
+                                <Icon type="right"/>
+                            </Button>
+                        </div>
                     </Col>
                 </Row>
             </div>

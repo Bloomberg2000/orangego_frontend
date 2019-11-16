@@ -1,7 +1,7 @@
 import React from "react";
 import QueueAnim from 'rc-queue-anim';
 import Banner from "../../widget/Banner/Banner";
-import CommentsPage from "./SubPage/CommentsPage";
+import CommentsPage from "../../widget/CommentPage/CommentsPage";
 import TitleBar from "../../widget/TitleBar/TitleBar";
 import MoviesList from "../../widget/MoviesList/MoviesList";
 

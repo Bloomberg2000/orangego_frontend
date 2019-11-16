@@ -23,7 +23,6 @@ export default class MoviesList extends React.Component {
     render() {
         const {isFirstNode, isLastNode, withTitle, title, data} = this.props;
         return (
-
             <div id="TheatricalPage"
                  style={{
                      background: '#fff',
