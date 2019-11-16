@@ -2251,6 +2251,11 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   resolved "https://registry.npm.taobao.org/boolbase/download/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
+bowser@^1.7.3:
+  version "1.9.4"
+  resolved "https://registry.npm.taobao.org/bowser/download/bowser-1.9.4.tgz#890c58a2813a9d3243704334fa81b96a5c150c9a"
+  integrity sha1-iQxYooE6nTJDcEM0+oG5alwVDJo=
+
 brace-expansion@^1.1.7:
   version "1.1.11"
   resolved "https://registry.npm.taobao.org/brace-expansion/download/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
@@ -3076,6 +3081,14 @@ css-has-pseudo@^0.10.0:
     postcss "^7.0.6"
     postcss-selector-parser "^5.0.0-rc.4"
 
+css-in-js-utils@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.npm.taobao.org/css-in-js-utils/download/css-in-js-utils-2.0.1.tgz#3b472b398787291b47cfe3e44fecfdd9e914ba99"
+  integrity sha1-O0crOYeHKRtHz+PkT+z92ekUupk=
+  dependencies:
+    hyphenate-style-name "^1.0.2"
+    isobject "^3.0.1"
+
 css-loader@2.1.1:
   version "2.1.1"
   resolved "https://registry.npm.taobao.org/css-loader/download/css-loader-2.1.1.tgz#d8254f72e412bb2238bb44dd674ffbef497333ea"
@@ -3566,6 +3579,13 @@ dom-serializer@0:
   dependencies:
     domelementtype "^2.0.1"
     entities "^2.0.0"
+
+dom7@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.npm.taobao.org/dom7/download/dom7-2.1.3.tgz#a736f9c3bfbc4ca039a81cd095f97d1d7f3de19c"
+  integrity sha1-pzb5w7+8TKA5qBzQlfl9HX894Zw=
+  dependencies:
+    ssr-window "^1.0.1"
 
 domain-browser@^1.1.1:
   version "1.2.0"
@@ -4095,6 +4115,11 @@ execa@^1.0.0:
     p-finally "^1.0.0"
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
+
+exenv@^1.2.1:
+  version "1.2.2"
+  resolved "https://registry.npm.taobao.org/exenv/download/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
+  integrity sha1-KueOhdmJQVhnCwPUe+wfA72Ru50=
 
 exit@^0.1.2:
   version "0.1.2"
@@ -5021,6 +5046,11 @@ https-browserify@^1.0.0:
   resolved "https://registry.npm.taobao.org/https-browserify/download/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
   integrity sha1-7AbBDgo0wPL68Zn3/X/Hj//QPHM=
 
+hyphenate-style-name@^1.0.2:
+  version "1.0.3"
+  resolved "https://registry.npm.taobao.org/hyphenate-style-name/download/hyphenate-style-name-1.0.3.tgz#097bb7fa0b8f1a9cf0bd5c734cf95899981a9b48"
+  integrity sha1-CXu3+guPGpzwvVxzTPlYmZgam0g=
+
 iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
   version "0.4.24"
   resolved "https://registry.npm.taobao.org/iconv-lite/download/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"
@@ -5174,6 +5204,14 @@ ini@^1.3.5, ini@~1.3.0:
   version "1.3.5"
   resolved "https://registry.npm.taobao.org/ini/download/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
   integrity sha1-7uJfVtscnsYIXgwid4CD9Zar+Sc=
+
+inline-style-prefixer@^4.0.0:
+  version "4.0.2"
+  resolved "https://registry.npm.taobao.org/inline-style-prefixer/download/inline-style-prefixer-4.0.2.tgz#d390957d26f281255fe101da863158ac6eb60911"
+  integrity sha1-05CVfSbygSVf4QHahjFYrG62CRE=
+  dependencies:
+    bowser "^1.7.3"
+    css-in-js-utils "^2.0.0"
 
 inquirer@6.5.0:
   version "6.5.0"
@@ -8314,7 +8352,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.3"
 
-prop-types@15.x, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@15.x, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@latest:
   version "15.7.2"
   resolved "https://registry.npm.taobao.org/prop-types/download/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha1-UsQedbjIfnK52TYOAga5ncv/psU=
@@ -8431,6 +8469,15 @@ querystringify@^2.1.1:
   resolved "https://registry.npm.taobao.org/querystringify/download/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
   integrity sha1-YOWl/WSn+L+k0qsu1v30yFutFU4=
 
+radium@^0.25.1:
+  version "0.25.2"
+  resolved "https://registry.npm.taobao.org/radium/download/radium-0.25.2.tgz#a9c24684d35dac8e55f4cb0d4a24ca739d772cdf"
+  integrity sha1-qcJGhNNdrI5V9MsNSiTKc513LN8=
+  dependencies:
+    exenv "^1.2.1"
+    inline-style-prefixer "^4.0.0"
+    prop-types "^15.5.8"
+
 raf@3.4.1, raf@^3.4.0, raf@^3.4.1, raf@~3.4.0:
   version "3.4.1"
   resolved "https://registry.npm.taobao.org/raf/download/raf-3.4.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fraf%2Fdownload%2Fraf-3.4.1.tgz#0742e99a4a6552f445d73e3ee0328af0ff1ede39"
@@ -8503,6 +8550,19 @@ rc-animate@^3.0.0-rc.1:
     prop-types "15.x"
     raf "^3.4.0"
     rc-util "^4.5.0"
+    react-lifecycles-compat "^3.0.4"
+
+rc-animate@latest:
+  version "2.10.2"
+  resolved "https://registry.npm.taobao.org/rc-animate/download/rc-animate-2.10.2.tgz?cache=0&sync_timestamp=1573293702009&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frc-animate%2Fdownload%2Frc-animate-2.10.2.tgz#217fdc76ff26cbf425a5caf87cc8a36ba4598456"
+  integrity sha1-IX/cdv8my/Qlpcr4fMija6RZhFY=
+  dependencies:
+    babel-runtime "6.x"
+    classnames "^2.2.6"
+    css-animation "^1.3.2"
+    prop-types "15.x"
+    raf "^3.4.0"
+    rc-util "^4.15.3"
     react-lifecycles-compat "^3.0.4"
 
 rc-calendar@~9.15.5:
@@ -8963,6 +9023,13 @@ react-app-rewired@^2.1.5:
   integrity sha1-WS7C6uXDxc2WyAkwtdw/bDTaHcY=
   dependencies:
     semver "^5.6.0"
+
+react-coverflow@^0.2.20:
+  version "0.2.20"
+  resolved "https://registry.npm.taobao.org/react-coverflow/download/react-coverflow-0.2.20.tgz#6a6b8cf3c845ae235025d21ae3f7818d976c6d57"
+  integrity sha1-amuM88hFriNQJdIa4/eBjZdsbVc=
+  dependencies:
+    radium "^0.25.1"
 
 react-dev-utils@^9.1.0:
   version "9.1.0"
@@ -10016,6 +10083,11 @@ sshpk@^1.7.0:
     safer-buffer "^2.0.2"
     tweetnacl "~0.14.0"
 
+ssr-window@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/ssr-window/download/ssr-window-1.0.1.tgz#30752a6a4666e7767f0b7e6aa6fc2fdbd0d9b369"
+  integrity sha1-MHUqakZm53Z/C35qpvwv29DZs2k=
+
 ssri@^6.0.1:
   version "6.0.1"
   resolved "https://registry.npm.taobao.org/ssri/download/ssri-6.0.1.tgz#2a3c41b28dd45b62b63676ecb74001265ae9edd8"
@@ -10303,6 +10375,14 @@ svgo@^1.0.0, svgo@^1.2.2:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+swiper@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.npm.taobao.org/swiper/download/swiper-5.2.0.tgz#834aaf6053d324bcb60578ba50bb62f54342f9ca"
+  integrity sha1-g0qvYFPTJLy2BXi6ULti9UNC+co=
+  dependencies:
+    dom7 "^2.1.3"
+    ssr-window "^1.0.1"
 
 symbol-tree@^3.2.2:
   version "3.2.4"

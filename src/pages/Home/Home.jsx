@@ -1,141 +1,48 @@
 import React from "react";
-import {Button, Col, Icon, Input, Layout, Menu, Row} from 'antd';
-import {enquireScreen} from 'enquire-js';
-import {Link} from "react-router-dom";
-import "./Home.css"
-import OrangeGoLogo from "../../images/logo.svg";
-import Animate from 'rc-animate';
+import QueueAnim from 'rc-queue-anim';
+import Banner from "../../widget/Banner/Banner";
+import CommentsPage from "./SubPage/CommentsPage";
+import TitleBar from "../../widget/TitleBar/TitleBar";
+import MoviesList from "../../widget/MoviesList/MoviesList";
 
 
-const {Search} = Input;
-const {Header, Content, Footer, Sider} = Layout;
-const OrangoGoIcon = Icon.createFromIconfontCN({
-    scriptUrl: '//at.alicdn.com/t/font_1510677_jqa56lk9e5.js', // 在 iconfont.cn 上生成
-});
+const bannerData = [
+    {title: '罗小黑战记', description:"2000",imgSrc: "https://pic1.iqiyipic.com/image/20191111/ff/f9/v_130601874_m_601_m7_220_124.jpg"},
+    {title: '罗小黑战记', description:"2001",imgSrc: "https://pic4.iqiyipic.com/image/20191112/4c/26/v_50223166_m_601_m8_220_124.jpg"},
+    {title: '罗小黑战记', description:"2002",imgSrc: "https://pic7.iqiyipic.com/image/20190810/bf/0c/v_112873415_m_601_m4_220_124.jpg"},
+    {title: '罗小黑战记', description:"2003",imgSrc: "https://pic4.iqiyipic.com/image/20190808/ab/75/v_50116514_m_601_m7_220_124.jpg"},
+    {title: '罗小黑战记', description:"2004",imgSrc: "https://pic4.iqiyipic.com/image/20191114/f5/51/a_100238925_m_601_m6_220_124.jpg"},
+    {title: '罗小黑战记', description:"2005",imgSrc: "https://pic3.iqiyipic.com/common/lego/20191115/6cb286496e1548cd80bf7cba8f35e4a8.jpg"},
+    {title: '罗小黑战记', description:"2006",imgSrc: "https://pic2.iqiyipic.com/common/lego/20191113/265d0d577fc944a58ca4cc6bbcf80135.jpg"},
+    {title: '罗小黑战记', description:"2007",imgSrc: "https://pic3.iqiyipic.com/common/lego/20191115/641ab8668fa34cf3bfdfbc06e1b9bc46.jpg"},
+    {title: '罗小黑战记', description:"2008",imgSrc: "https://pic0.iqiyipic.com/image/20191012/d4/e3/a_100317150_m_601_m4_220_124.jpg"},
+    {title: '罗小黑战记', description:"2009",imgSrc: "https://pic4.iqiyipic.com/image/20190605/51/7b/a_100300228_m_601_m1_220_124.jpg"},
+    {title: '罗小黑战记', description:"2010",imgSrc: "https://pic1.iqiyipic.com/image/20190704/61/11/a_100260404_m_601_m4_220_124.jpg"},
+    {title: '罗小黑战记', description:"2011",imgSrc: "https://pic4.iqiyipic.com/image/20191104/51/6b/v_139343015_m_601_m12_220_124.jpg"},
+    {title: '罗小黑战记', description:"2012",imgSrc: "https://pic4.iqiyipic.com/image/20191108/d4/86/a_100345137_m_601_m7_220_124.jpg"},
+]
 
-const SearchBar = (<div><Search placeholder="搜索电影/影人"/></div>);
+const moviesData = [
+    {name: '罗小黑战记', score: 8.8, imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"},
+    {name: '罗小黑战记', score: 8.8, imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"},
+    {name: '罗小黑战记', score: 8.8, imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"},
+    {name: '罗小黑战记', score: 8.8, imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"},
+    {name: '罗小黑战记', score: 8.8, imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"},
+    {name: '罗小黑战记', score: 8.8, imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"},
+]
 
 export default class Home extends React.Component {
-    state = {
-        collapsed: true,
-        searchBarShow: false,
-        isMobile: false,
-    };
-
-    componentDidMount() {
-        enquireScreen((b) => {
-            this.setState({
-                isMobile: !!b,
-            });
-        });
-    }
-
-    onCollapse = collapsed => {
-        this.setState({collapsed});
-    };
-
-    handleSearchBarShow() {
-        this.setState({
-            searchBarShow: !this.state.searchBarShow
-        });
-    }
-
     render() {
         return (
-            <Layout style={{minHeight: '100vh'}}>
-                <Sider breakpoint="sm" collapsedWidth="0" collapsible collapsed={this.state.collapsed}
-                       onCollapse={this.onCollapse}>
-                    <div className="logo">
-                        <img className="logo-img" src={OrangeGoLogo} alt="logo"/>
-                        {!this.state.collapsed ? <span className="logo-text">OrangeGo</span> : null}
-                    </div>
-                    <Menu theme="dark" defaultSelectedKeys={['home']} mode="inline">
-                        <Menu.Item key="home">
-                            <Icon type="home"/>
-                            <span>主页</span>
-                            <Link to="/"/>
-                        </Menu.Item>
-                        <Menu.Item key="cinema">
-                            <OrangoGoIcon type="icon-cinema"/>
-                            <span>院线热映</span>
-                            <Link to="/"/>
-                        </Menu.Item>
-                        <Menu.Item key="movies">
-                            <OrangoGoIcon type="icon-movies"/>
-                            <span>选电影</span>
-                            <Link to="/"/>
-                        </Menu.Item>
-                        <Menu.Item key="ranking">
-                            <OrangoGoIcon type="icon-ranking"/>
-                            <span>排行榜</span>
-                            <Link to="/"/>
-                        </Menu.Item>
-                        <Menu.Item key="category">
-                            <OrangoGoIcon type="icon-category"/>
-                            <span>分类</span>
-                            <Link to="/"/>
-                        </Menu.Item>
-                        <Menu.Item key="comment">
-                            <OrangoGoIcon type="icon-comment"/>
-                            <span>影评</span>
-                            <Link to="/"/>
-                        </Menu.Item>
-                    </Menu>
-                </Sider>
-                <Layout>
-                    <Header style={{background: '#fff', padding: 0}}>
-                        <Row type="flex" justify="space-between">
-                            <Col xs={{span: 2, offset: 0}} sm={{span: 4, offset: 0}}
-                                 md={{span: 6, offset: 0}} lg={{span: 8, offset: 0}}>
-                                {this.state.collapsed ?
-                                    <div className="logo">
-                                        <img className="logo-img" src={OrangeGoLogo} alt="logo"/>
-                                        <span className="logo-text-outside">
-                                        OrangeGo&nbsp;<span className="logo-text-outside-lighter">Movies</span>
-                                    </span>
-                                    </div>
-                                    : null}
-                            </Col>
-                            {/*大屏幕*/}
-                            {this.state.isMobile ?
-                                <Col xs={2} sm={2}>
-                                    {!this.state.searchBarShow ?
-                                        <Button shape="circle" icon="search"
-                                                onClick={() => this.handleSearchBarShow()}/> :
-                                        <Button shape="circle" icon="close" onClick={() => this.handleSearchBarShow()}/>
-                                    }
-
-                                </Col> :
-                                <Col sm={{span: 12, offset: 8}} md={{span: 10, offset: 8}} lg={{span: 10, offset: 6}}>
-                                    {SearchBar}
-                                </Col>
-                            }
-                        </Row>
-                        <Animate
-                            component=""
-                            transitionName="fade"
-                        >
-                            {this.state.isMobile && this.state.searchBarShow ?
-                                <Row style={{background: '#fff', padding: 0}}>
-                                    <Col xs={{span: 22, offset: 2}} sm={{span: 22, offset: 2}}>{SearchBar}</Col>
-                                </Row> : null
-                            }
-                        </Animate>
-                    </Header>
-                    <Content style={{margin: '0 16px'}}>
-                        {this.props.children}
-                        {/*    <Breadcrumb style={{margin: '16px 0'}}>*/}
-                        {/*        <Breadcrumb.Item>User</Breadcrumb.Item>*/}
-                        {/*        <Breadcrumb.Item>Bill</Breadcrumb.Item>*/}
-                        {/*    </Breadcrumb>*/}
-                        {/*    <div style={{padding: 24, background: '#fff', minHeight: 360}}>Bill is a cat.</div>*/}
-                    </Content>
-                    <Footer style={{textAlign: 'center'}}>
-                        Copyright © 2019 OrangeGo Corporation. All rights reserved.
-                    </Footer>
-                </Layout>
-            </Layout>
-        )
-            ;
+            <div id="home">
+                <QueueAnim delay={300}>
+                    <TitleBar key="a" title={"为您推荐"}/>
+                    <Banner key="b" data={bannerData} pageSize={3}/>
+                    <MoviesList key="c" withTitle={true} title={"正在热映"} data={moviesData} isFirstNode={true}/>
+                    <MoviesList key="d" withTitle={true} title={"热门电影"} data={moviesData}/>
+                    <CommentsPage key="e"/>
+                </QueueAnim>
+            </div>
+        );
     }
 }
