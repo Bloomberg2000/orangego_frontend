@@ -13,7 +13,7 @@ ReactDOM.render(
             <Switch>
                 <Redirect exact from="/" to="/home"/>
                 {routes.map((router) => {
-                    return <Route key={router.path} path={router.path} component={router.component}/>
+                    return <Route exact key={router.path} path={router.path} component={router.component}/>
                 })}
             </Switch>
         </AppWithRouter>

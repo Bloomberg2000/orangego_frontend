@@ -85,11 +85,6 @@ class App extends React.Component {
                             <span>排行榜</span>
                             <Link to="/"/>
                         </Menu.Item>
-                        <Menu.Item key="/category">
-                            <OrangoGoIcon type="icon-category"/>
-                            <span>分类</span>
-                            <Link to="/"/>
-                        </Menu.Item>
                         <Menu.Item key="/comment">
                             <OrangoGoIcon type="icon-comment"/>
                             <span>影评</span>

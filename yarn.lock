@@ -8478,7 +8478,7 @@ radium@^0.25.1:
     inline-style-prefixer "^4.0.0"
     prop-types "^15.5.8"
 
-raf@3.4.1, raf@^3.4.0, raf@^3.4.1, raf@~3.4.0:
+raf@3.4.1, raf@3.x, raf@^3.4.0, raf@^3.4.1, raf@~3.4.0:
   version "3.4.1"
   resolved "https://registry.npm.taobao.org/raf/download/raf-3.4.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fraf%2Fdownload%2Fraf-3.4.1.tgz#0742e99a4a6552f445d73e3ee0328af0ff1ede39"
   integrity sha1-B0LpmkplUvRF1z4+4DKK8P8e3jk=
@@ -8790,6 +8790,18 @@ rc-resize-observer@^0.1.0:
     rc-util "^4.13.0"
     resize-observer-polyfill "^1.5.1"
 
+rc-scroll-anim@^2.7.3:
+  version "2.7.3"
+  resolved "https://registry.npm.taobao.org/rc-scroll-anim/download/rc-scroll-anim-2.7.3.tgz#f2cbf7668be3f344bf23a2ddfb9661cbface5c19"
+  integrity sha1-8sv3Zovj80S/I6Ld+5Zhy/rOXBk=
+  dependencies:
+    babel-runtime "6.x"
+    prop-types "^15.6.0"
+    raf "3.x"
+    rc-tween-one "^2.4.0"
+    react-lifecycles-compat "^3.0.4"
+    tween-functions "1.x"
+
 rc-select@~9.2.0:
   version "9.2.1"
   resolved "https://registry.npm.taobao.org/rc-select/download/rc-select-9.2.1.tgz?cache=0&sync_timestamp=1573009683119&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frc-select%2Fdownload%2Frc-select-9.2.1.tgz#0fbf47a933c36e1e6ef76c88fab32f58029e6a01"
@@ -8962,7 +8974,7 @@ rc-trigger@^3.0.0-rc.2:
     rc-animate "^3.0.0-rc.1"
     rc-util "^4.4.0"
 
-rc-tween-one@^2.5.0:
+rc-tween-one@^2.4.0, rc-tween-one@^2.5.0:
   version "2.6.5"
   resolved "https://registry.npm.taobao.org/rc-tween-one/download/rc-tween-one-2.6.5.tgz?cache=0&sync_timestamp=1569942143834&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frc-tween-one%2Fdownload%2Frc-tween-one-2.6.5.tgz#b4c21d18df0ffae38bc6965daf3b73d72df0c584"
   integrity sha1-tMIdGN8P+uOLxpZdrztz1y3wxYQ=
@@ -9110,7 +9122,7 @@ react-router-dom@^5.1.2:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react-router@5.1.2:
+react-router@5.1.2, react-router@latest:
   version "5.1.2"
   resolved "https://registry.npm.taobao.org/react-router/download/react-router-5.1.2.tgz#6ea51d789cb36a6be1ba5f7c0d48dd9e817d3418"
   integrity sha1-bqUdeJyzamvhul98DUjdnoF9NBg=
@@ -10620,7 +10632,7 @@ tunnel-agent@^0.6.0:
   dependencies:
     safe-buffer "^5.0.1"
 
-tween-functions@~1.2.0:
+tween-functions@1.x, tween-functions@~1.2.0:
   version "1.2.0"
   resolved "https://registry.npm.taobao.org/tween-functions/download/tween-functions-1.2.0.tgz#1ae3a50e7c60bb3def774eac707acbca73bbc3ff"
   integrity sha1-GuOlDnxguz3vd06scHrLynO7w/8=

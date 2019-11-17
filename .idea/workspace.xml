@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bf85f5b-3ca7-493c-9504-9259c9c2d0a8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Login/Login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Login/Login.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/utils.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widget/LoginForm/LoginForm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widget/LoginForm/LoginForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/SubPage/CommentsPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/CommentPage/CommentsPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/SubPage/CommentsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/CommentPage/CommentsPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widget/Banner/Banner.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/Banner/Banner.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widget/Banner/Banner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/Banner/Banner.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widget/MoviesList/MoviesList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/MoviesList/MoviesList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/widget/TitleBar/TitleBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/TitleBar/TitleBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +41,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/MoviesGallery" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/Login" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -52,23 +56,24 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="reference.idesettings.emmet.jsx" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/pages/MoviesGallery" />
-      <recent name="$PROJECT_DIR$/src/widget/MoviesList" />
-      <recent name="$PROJECT_DIR$/src/pages/TheatricalLine/SubPage" />
-      <recent name="$PROJECT_DIR$/src/pages/Home/SubPage" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/widget/CommentPage" />
       <recent name="$PROJECT_DIR$/src/widget/Banner" />
       <recent name="$PROJECT_DIR$/src/widget/TitleBarPage" />
       <recent name="$PROJECT_DIR$/src/widget/MoviePreviewBox" />
       <recent name="$PROJECT_DIR$/src/pages/Home/subpages" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/Login" />
+      <recent name="$PROJECT_DIR$/src/utils" />
+      <recent name="$PROJECT_DIR$/src/pages/MoviesGallery" />
+      <recent name="$PROJECT_DIR$/src/widget/MoviesList" />
+      <recent name="$PROJECT_DIR$/src/pages/TheatricalLine/SubPage" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -114,7 +119,8 @@
       <option name="presentableId" value="Default" />
       <updated>1573737525058</updated>
       <workItem from="1573737526098" duration="16205000" />
-      <workItem from="1573783092752" duration="42996000" />
+      <workItem from="1573783092752" duration="43471000" />
+      <workItem from="1573973619680" duration="9594000" />
     </task>
     <servers />
   </component>

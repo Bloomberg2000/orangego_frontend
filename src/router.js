@@ -7,8 +7,10 @@ import StaffsDetail from "./pages/StaffsDetail";
 import UsersDetail from "./pages/UsersDetail";
 import Home from "./pages/Home/Home";
 import TheatricalLine from "./pages/TheatricalLine/TheatricalLine";
+import Login from "./pages/Login/Login";
 
 export const routes = [
+    {path: '/login', component: Login},
     {path: '/home', component: Home},
     {path: '/theatricalLine', component: TheatricalLine},
     {path: '/awardsDetail', component: AwardsDetail},
