@@ -192,8 +192,5 @@
 
 .swiper-custom-button{
     margin-left: 25px;
-    opacity: 0.5;
-}
-.swiper-custom-button:hover{
-    opacity: 1;
+    opacity: 0;
 }

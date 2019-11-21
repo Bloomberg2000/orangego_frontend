@@ -1,7 +1,7 @@
 import React from "react";
 import QueueAnim from 'rc-queue-anim';
 import Banner from "../../widget/Banner/Banner";
-import CommentsPage from "../../widget/CommentPage/CommentsPage";
+import CommentPreview from "../../widget/CommentPreview/CommentPreview";
 import TitleBar from "../../widget/TitleBar/TitleBar";
 import MoviesList from "../../widget/MoviesList/MoviesList";
 
@@ -40,7 +40,7 @@ export default class Home extends React.Component {
                     <Banner key="b" data={bannerData} pageSize={3}/>
                     <MoviesList key="c" withTitle={true} title={"正在热映"} data={moviesData} isFirstNode={true}/>
                     <MoviesList key="d" withTitle={true} title={"热门电影"} data={moviesData}/>
-                    <CommentsPage key="e"/>
+                    <CommentPreview key="e"/>
                 </QueueAnim>
             </div>
         );

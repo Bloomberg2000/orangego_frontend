@@ -1,9 +1,9 @@
 import React from "react";
-import './CommentsPage.css'
+import './CommentPreview.css'
 import {Typography} from "antd";
 
 const {Title} = Typography;
-export default class CommentsPage extends React.Component {
+export default class CommentPreview extends React.Component {
     render() {
         return (
             <div id="CommentsPage" style={{background: '#fff',padding:'20px'}}>

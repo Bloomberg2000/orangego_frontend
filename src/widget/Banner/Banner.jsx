@@ -12,7 +12,9 @@ export default class Banner extends React.Component {
     };
 
     state = {
-        windowWidth: window.innerWidth
+        windowWidth: window.innerWidth,
+        isBannerHover: false,
+        isButtonHover: false
     };
 
     constructor(props) {
@@ -66,12 +68,37 @@ export default class Banner extends React.Component {
         })
     }
 
+    onMouseOverBannerAction = () => {
+        this.setState({
+            isBannerHover: true
+        })
+    }
+
+    onMouseLeaveBannerAction = () => {
+        this.setState({
+            isBannerHover: false
+        })
+    }
+
+    onMouseOverButtonAction = () => {
+        this.setState({
+            isButtonHover: true
+        })
+    }
+
+    onMouseLeaveButtonAction = () => {
+        this.setState({
+            isButtonHover: false
+        })
+    }
+
     render() {
         return (
             <div id="BannerPage" style={{background: '#f7f7f7', padding: '0'}}>
                 <Row type="flex" justify="space-around" align="middle">
-                    <Col span={24} style={{textAlign: "center",padding:'0 20px 0 20px'}}>
-                        <div className="swiper-container">
+                    <Col span={24} style={{textAlign: "center", padding: '0 20px 0 20px'}}>
+                        <div className="swiper-container" onMouseLeave={this.onMouseLeaveBannerAction}
+                             onMouseOver={this.onMouseOverBannerAction}>
                             <div className="swiper-wrapper">
                                 {
                                     this.props.data.map((item) => {
@@ -95,16 +122,24 @@ export default class Banner extends React.Component {
                             </div>
                         </div>
                         <div className="swiper-button-prev">
-                            <Button className="swiper-custom-button" shape="circle" onClick={() => {
-                                this.swiper.slidePrev();
-                            }}>
+                            <Button className="swiper-custom-button" shape="circle"
+                                    onMouseLeave={this.onMouseLeaveButtonAction}
+                                    onMouseOver={this.onMouseOverButtonAction}
+                                    style={{opacity: (this.state.isButtonHover) ? 1 : (this.state.isBannerHover ? 0.5 : 0)}}
+                                    onClick={() => {
+                                        this.swiper.slidePrev();
+                                    }}>
                                 <Icon type="left"/>
                             </Button>
                         </div>
                         <div className="swiper-button-next">
-                            <Button className="swiper-custom-button"  shape="circle" onClick={() => {
-                                this.swiper.slideNext();
-                            }}>
+                            <Button className="swiper-custom-button" shape="circle"
+                                    onMouseLeave={this.onMouseLeaveButtonAction}
+                                    onMouseOver={this.onMouseOverButtonAction}
+                                    style={{opacity: (this.state.isButtonHover) ? 1 : (this.state.isBannerHover ? 0.5 : 0)}}
+                                    onClick={() => {
+                                        this.swiper.slideNext();
+                                    }}>
                                 <Icon type="right"/>
                             </Button>
                         </div>
