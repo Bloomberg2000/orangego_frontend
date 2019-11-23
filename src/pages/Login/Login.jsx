@@ -81,7 +81,7 @@ class LoginPage extends React.Component {
     }
 
     componentWillUnmount() {
-        window.addEventListener('resize', this.onWindowResize);
+        window.removeEventListener('resize', this.onWindowResize);
     }
 
     render() {

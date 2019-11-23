@@ -18,7 +18,6 @@ export default class TheatricalLine extends React.Component {
             <QueueAnim delay={300}>
                 <TitleBar key="a" title={"院线热映"}/>
                 <MoviesList key="b" withTitle={true} title={"正在上映"} data={data} isFirstNode={true}/>
-                <MoviesList key="c" withTitle={true} title={"即将上映"} data={data} isLastNode={true}/>
             </QueueAnim>
         </div>);
     }

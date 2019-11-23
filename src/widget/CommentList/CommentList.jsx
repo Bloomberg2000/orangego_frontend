@@ -1,25 +1,25 @@
 import React from "react";
-import './MoviesList.css'
-import {Col, List, Row, Tag, Typography} from "antd";
-import MoviePreviewCard from "../MoviePreviewCard/MoviePreviewCard";
+import './CommentList.css'
+import {Button, Col, Divider, List, Pagination, Row, Typography} from "antd";
 import * as PropTypes from "prop-types";
-
-const {CheckableTag} = Tag;
+import CommentPreviewCard from "../CommentPreviewCard/CommentPreviewCard";
 
 const {Title} = Typography;
 
-export default class MoviesList extends React.Component {
+export default class CommentList extends React.Component {
     static propTypes = {
+        isLastNode: PropTypes.bool,
+        isFirstNode: PropTypes.bool,
         withTitle: PropTypes.bool,
-        withFilter: PropTypes.bool,
+        withShowMoreButton: PropTypes.bool,
         title: PropTypes.string,
         data: PropTypes.array,
-        filterList: PropTypes.array
     };
 
     static defaultProps = {
-        withTitle: false,
-        withFilter: false
+        isLastNode: false,
+        isFirstNode: false,
+        withShowMoreButton: false
     };
 
     constructor(props) {
@@ -95,43 +95,46 @@ export default class MoviesList extends React.Component {
     }
 
     render() {
-        const {withTitle, withFilter, filterList, title} = this.props;
+        const {isFirstNode, isLastNode, withTitle, withShowMoreButton, title} = this.props;
         return (
-            <div id="TheatricalPage"
+            <div id="CommentList"
                  style={{
-                     background: '#fff', padding: '20px 20px 1px 20px'
+                     background: '#fff',
+                     padding: (isFirstNode === true) ? '20px 20px 1px 20px' : '0px 20px 1px 20px'
                  }}>
                 {withTitle ?
                     <Row type="flex" justify="space-between" align="middle">
                         <Col>
                             <Title level={4}>{title}</Title>
                         </Col>
+                        {withShowMoreButton ?
+                            <Col>
+                                <Button type="link">
+                                    查看更多 >
+                                </Button>
+                            </Col> : null}
                     </Row> : null}
-                {withFilter ?
-                    filterList.map(item => (
-                        <CheckableTag
-                            key={item.key}
-                            checked={this.state.selectedTags.indexOf(item) > -1}
-                            onChange={(checked) => {
-                                checked ?
-                                    this.setState({selectedTags: [item]}) :
-                                    this.setState({selectedTags: []})
-                            }}
-                        >
-                            {item.value}
-                        </CheckableTag>
-                    )) : null}
-                <List grid={{
-                    gutter: 16, xs: 2, sm: 3, md: 4, lg: 6, xl: 6, xxl: 6,
-                }}
+                <List itemLayout="horizontal"
                       dataSource={this.state.dataArray}
                       renderItem={item => (
                           <List.Item key={item.key} style={{padding: '5px'}}>
-                              <MoviePreviewCard name={item.name} score={item.score}
-                                                imgSrc={item.imgSrc}/>
+                              <CommentPreviewCard name={item.name} score={item.score}
+                                                  imgSrc={item.imgSrc}/>
                           </List.Item>
                       )}
                 />
+                <Row type="flex" justify="end">
+                    <Col>
+                        <Pagination simple
+                                    defaultCurrent={1}
+                                    pageSize={this.state.pageSize}
+                                    total={this.state.total}
+                                    onChange={(page, pageSize) => {
+                                        this.setState({currentPage: page}, () => this.getData())
+                                    }}/>
+                    </Col>
+                </Row>
+                {!isLastNode ? <Divider/> : <div style={{margin: '20px'}}/>}
             </div>
         );
     }

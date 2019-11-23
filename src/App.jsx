@@ -75,10 +75,10 @@ class App extends React.Component {
                             <span>院线热映</span>
                             <Link to="/theatricalLine"/>
                         </Menu.Item>
-                        <Menu.Item key="/moviesList">
+                        <Menu.Item key="/moviesGallery">
                             <OrangoGoIcon type="icon-movies"/>
                             <span>选电影</span>
-                            <Link to="/"/>
+                            <Link to="/moviesGallery"/>
                         </Menu.Item>
                         <Menu.Item key="/ranking">
                             <OrangoGoIcon type="icon-ranking"/>

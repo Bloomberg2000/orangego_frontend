@@ -1,11 +1,11 @@
 /* xs */
 @media (max-width: 576px) {
     .ant-card-meta-title {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .ant-card {
-        font-size: 6px;
+        font-size: 10px;
 
     }
 
@@ -21,11 +21,11 @@
 /* sm */
 @media (min-width: 576px) {
     .ant-card-meta-title {
-        font-size: 13px;
+        font-size: 16px;
     }
 
     .ant-card {
-        font-size: 10px;
+        font-size: 13px;
 
     }
 
@@ -46,7 +46,6 @@
 
     .ant-card {
         font-size: 16px;
-
     }
 
     .ant-rate-star:not(:last-child) {
@@ -65,7 +64,7 @@
     }
 
     .ant-card {
-        font-size: 16px;
+        font-size: 13px;
 
     }
 
@@ -74,7 +73,7 @@
     }
 
     .ant-rate {
-        font-size: 16px;
+        font-size: 12px;
     }
 }
 

@@ -1,6 +1,6 @@
 import React from "react";
-import './MoviesList.css'
-import {Col, List, Row, Tag, Typography} from "antd";
+import './MoviesSingleLineList.css'
+import {Button, Col, Divider, List, Pagination, Row, Tag, Typography} from "antd";
 import MoviePreviewCard from "../MoviePreviewCard/MoviePreviewCard";
 import * as PropTypes from "prop-types";
 
@@ -8,18 +8,23 @@ const {CheckableTag} = Tag;
 
 const {Title} = Typography;
 
-export default class MoviesList extends React.Component {
+export default class MoviesSingleLineList extends React.Component {
     static propTypes = {
+        isLastNode: PropTypes.bool,
+        isFirstNode: PropTypes.bool,
         withTitle: PropTypes.bool,
         withFilter: PropTypes.bool,
+        withShowMoreButton: PropTypes.bool,
         title: PropTypes.string,
         data: PropTypes.array,
         filterList: PropTypes.array
     };
 
     static defaultProps = {
-        withTitle: false,
-        withFilter: false
+        isLastNode: false,
+        isFirstNode: false,
+        withFilter: false,
+        withShowMoreButton: false
     };
 
     constructor(props) {
@@ -95,17 +100,24 @@ export default class MoviesList extends React.Component {
     }
 
     render() {
-        const {withTitle, withFilter, filterList, title} = this.props;
+        const {isFirstNode, isLastNode, withTitle, withFilter, withShowMoreButton, filterList, title} = this.props;
         return (
             <div id="TheatricalPage"
                  style={{
-                     background: '#fff', padding: '20px 20px 1px 20px'
+                     background: '#fff',
+                     padding: (isFirstNode === true) ? '20px 20px 1px 20px' : '0px 20px 1px 20px'
                  }}>
                 {withTitle ?
                     <Row type="flex" justify="space-between" align="middle">
                         <Col>
                             <Title level={4}>{title}</Title>
                         </Col>
+                        {withShowMoreButton ?
+                            <Col>
+                                <Button type="link">
+                                    查看更多 >
+                                </Button>
+                            </Col> : null}
                     </Row> : null}
                 {withFilter ?
                     filterList.map(item => (
@@ -132,6 +144,18 @@ export default class MoviesList extends React.Component {
                           </List.Item>
                       )}
                 />
+                <Row type="flex" justify="end">
+                    <Col>
+                        <Pagination simple
+                                    defaultCurrent={1}
+                                    pageSize={this.state.pageSize}
+                                    total={this.state.total}
+                                    onChange={(page, pageSize) => {
+                                        this.setState({currentPage: page}, () => this.getData())
+                                    }}/>
+                    </Col>
+                </Row>
+                {!isLastNode ? <Divider/> : null}
             </div>
         );
     }

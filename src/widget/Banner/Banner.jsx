@@ -39,7 +39,7 @@ export default class Banner extends React.Component {
     }
 
     componentWillUnmount() {
-        window.addEventListener('resize', this.onWindowResize);
+        window.removeEventListener('resize', this.onWindowResize);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {

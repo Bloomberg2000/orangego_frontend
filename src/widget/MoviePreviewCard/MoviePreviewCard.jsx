@@ -21,11 +21,11 @@ export default class MoviePreviewCard extends React.Component {
             >
                 <Meta title={name}/>
                 <Row style={{marginTop: '5px'}}>
-                    <Col xs={24} sm={24} md={24} lg={19} xl={24} xxl={15}>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={15}>
                         {/* 10分制转5分制 四舍五入除以二 */}
                         <Rate disabled allowHalf defaultValue={Math.round(score) / 2}/>
                     </Col>
-                    <Col xs={24} sm={24} md={24} lg={3} xl={24} xxl={9}>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={9}>
                         <Text type="secondary">{score}</Text>
                     </Col>
                 </Row>

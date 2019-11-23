@@ -2,17 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bf85f5b-3ca7-493c-9504-9259c9c2d0a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/widget/CommentPreview/CommentPreview.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widget/CommentPreviewCard/CommentPreviewCard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widget/CommentPreviewCard/CommentPreviewCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widget/MoviesSingleLineList/MoviesSingleLineList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widget/MoviesSingleLineList/MoviesSingleLineList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Login/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/Login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MoviesDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MoviesDetail/MoviesDetail.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MoviesGallery/MoviesGallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MoviesGallery/MoviesGallery.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TheatricalLine/TheatricalLine.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TheatricalLine/TheatricalLine.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widget/Banner/Banner.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/Banner/Banner.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/widget/Banner/Banner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/Banner/Banner.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widget/CommentPage/CommentsPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MoviesDetail/MoviesDetail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widget/CommentPage/CommentsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/CommentPreview/CommentPreview.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widget/LoginForm/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/LoginForm/LoginForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widget/CommentPreview/CommentPreview.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/CommentList/CommentList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widget/CommentPreview/CommentPreview.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/CommentList/CommentList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widget/MoviePreviewCard/MoviePreviewCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/MoviePreviewCard/MoviePreviewCard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widget/MoviePreviewCard/MoviePreviewCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/MoviePreviewCard/MoviePreviewCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widget/MoviesList/MoviesList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/MoviesList/MoviesList.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +46,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/Login" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/widget" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -59,19 +66,19 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/pages/Login" />
-      <recent name="$PROJECT_DIR$/src/utils" />
-      <recent name="$PROJECT_DIR$/src/pages/MoviesGallery" />
-      <recent name="$PROJECT_DIR$/src/widget/MoviesList" />
-      <recent name="$PROJECT_DIR$/src/pages/TheatricalLine/SubPage" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/pages/MoviesDetail" />
       <recent name="$PROJECT_DIR$/src/widget/CommentPage" />
       <recent name="$PROJECT_DIR$/src/widget/Banner" />
       <recent name="$PROJECT_DIR$/src/widget/TitleBarPage" />
       <recent name="$PROJECT_DIR$/src/widget/MoviePreviewBox" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/widget" />
+      <recent name="$PROJECT_DIR$/src/widget/MoviePreview" />
+      <recent name="$PROJECT_DIR$/src/pages/Login" />
+      <recent name="$PROJECT_DIR$/src/utils" />
+      <recent name="$PROJECT_DIR$/src/pages/MoviesGallery" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -121,6 +128,10 @@
       <workItem from="1573973619680" duration="11890000" />
       <workItem from="1574229897502" duration="1749000" />
       <workItem from="1574244751185" duration="2489000" />
+      <workItem from="1574306766720" duration="811000" />
+      <workItem from="1574415861395" duration="556000" />
+      <workItem from="1574423260784" duration="466000" />
+      <workItem from="1574427988718" duration="11432000" />
     </task>
     <servers />
   </component>
