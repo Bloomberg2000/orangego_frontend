@@ -1,7 +1,6 @@
 import React from "react";
 import QueueAnim from "rc-queue-anim";
 import TitleBar from "../../widget/TitleBar/TitleBar";
-import MoviesSingleLineList from "../../widget/MoviesSingleLineList/MoviesSingleLineList";
 import MoviesList from "../../widget/MoviesList/MoviesList";
 
 const data = [

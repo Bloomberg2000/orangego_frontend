@@ -1,30 +1,33 @@
 import React from "react";
-import './MoviesSingleLineList.css'
-import {Button, Col, Divider, List, Pagination, Row, Tag, Typography} from "antd";
-import MoviePreviewCard from "../MoviePreviewCard/MoviePreviewCard";
+import './LongCommentPreviewList.css'
+import {Button, Col, Divider, List, Pagination, Row, Typography} from "antd";
 import * as PropTypes from "prop-types";
-
-const {CheckableTag} = Tag;
+import LongCommentPreviewCard from "../LongCommentPreviewCard/LongCommentPreviewCard";
 
 const {Title} = Typography;
 
-export default class MoviesSingleLineList extends React.Component {
+export default class LongCommentPreviewList extends React.Component {
     static propTypes = {
         isLastNode: PropTypes.bool,
         isFirstNode: PropTypes.bool,
         withTitle: PropTypes.bool,
-        withFilter: PropTypes.bool,
         withShowMoreButton: PropTypes.bool,
+        // 选填
+        withAuthorPicShow: PropTypes.bool,
+        withMoviePicShow: PropTypes.bool,
+        withLikeOrDisLike: PropTypes.bool,
         title: PropTypes.string,
         data: PropTypes.array,
-        filterList: PropTypes.array
+        pageSize: PropTypes.number
     };
 
     static defaultProps = {
         isLastNode: false,
         isFirstNode: false,
-        withFilter: false,
-        withShowMoreButton: false
+        withShowMoreButton: false,
+        withAuthorPicShow: false,
+        withMoviePicShow: false,
+        withLikeOrDisLike: false,
     };
 
     constructor(props) {
@@ -46,19 +49,7 @@ export default class MoviesSingleLineList extends React.Component {
     }
 
     getPageSize = () => {
-        if (this.state.windowWidth >= 992) {
-            // lg 及以上
-            return 6;
-        } else if (this.state.windowWidth >= 768) {
-            // md 及以上
-            return 4;
-        } else if (this.state.windowWidth >= 576) {
-            // sm 及以上
-            return 3;
-        } else {
-            // xs
-            return 2;
-        }
+        return 3;
     };
 
     getData() {
@@ -99,9 +90,9 @@ export default class MoviesSingleLineList extends React.Component {
     }
 
     render() {
-        const {isFirstNode, isLastNode, withTitle, withFilter, withShowMoreButton, filterList, title} = this.props;
+        const {isFirstNode, isLastNode, withTitle, withShowMoreButton, title} = this.props;
         return (
-            <div id="TheatricalPage"
+            <div id="CommentList"
                  style={{
                      background: '#fff',
                      padding: (isFirstNode === true) ? '20px 20px 1px 20px' : '0px 20px 1px 20px'
@@ -118,28 +109,29 @@ export default class MoviesSingleLineList extends React.Component {
                                 </Button>
                             </Col> : null}
                     </Row> : null}
-                {withFilter ?
-                    filterList.map(item => (
-                        <CheckableTag
-                            key={item.key}
-                            checked={this.state.selectedTags.indexOf(item) > -1}
-                            onChange={(checked) => {
-                                checked ?
-                                    this.setState({selectedTags: [item]}) :
-                                    this.setState({selectedTags: []})
-                            }}
-                        >
-                            {item.value}
-                        </CheckableTag>
-                    )) : null}
-                <List grid={{
-                    gutter: 16, xs: 2, sm: 3, md: 4, lg: 6, xl: 6, xxl: 6,
-                }}
+                <List itemLayout="horizontal"
                       dataSource={this.state.dataArray}
                       renderItem={item => (
                           <List.Item key={item.key} style={{padding: '5px'}}>
-                              <MoviePreviewCard name={item.name} score={item.score}
-                                                imgSrc={item.imgSrc}/>
+                              <LongCommentPreviewCard
+                                  authorId={item.authorId}
+                                  movieId={item.movieId}
+                                  commentId={item.commentId}
+                                  authorName={item.authorName}
+                                  movieName={item.movieName}
+                                  movieScore={item.movieScore}
+                                  editTime={item.editTime}
+                                  commentTitle={item.commentTitle}
+                                  commentContent={item.commentContent}
+                                  withAuthorPicShow={this.props.withAuthorPicShow}
+                                  authorPic={item.authorPic}
+                                  withMoviePicShow={this.props.withMoviePicShow}
+                                  moviePic={item.moviePic}
+                                  withLikeOrDisLike={this.props.withLikeOrDisLike}
+                                  likeNumber={item.likeNumber}
+                                  dislikeNumber={item.dislikeNumber}
+                                  replyNumber={item.replyNumber}
+                              />
                           </List.Item>
                       )}
                 />
@@ -154,7 +146,7 @@ export default class MoviesSingleLineList extends React.Component {
                                     }}/>
                     </Col>
                 </Row>
-                {!isLastNode ? <Divider/> : null}
+                {!isLastNode ? <Divider/> : <div style={{margin: '20px'}}/>}
             </div>
         );
     }

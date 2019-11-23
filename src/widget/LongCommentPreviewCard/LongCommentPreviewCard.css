@@ -1,0 +1,68 @@
+/* xs */
+@media (max-width: 576px) {
+    .movie-pic {
+        height: 150px;
+        width: auto;
+    }
+}
+
+/* sm */
+@media (min-width: 576px) {
+    .movie-pic {
+        height: 150px;
+        width: auto;
+    }
+}
+
+/* md */
+@media (min-width: 768px) {
+    .LongCommentPreviewCard .ant-card {
+        font-size: 14px;
+    }
+
+    .LongCommentPreviewCard .ant-rate-star:not(:last-child) {
+        margin-right: 4px;
+    }
+
+    .LongCommentPreviewCard .ant-rate {
+        font-size: 14px;
+    }
+
+    .movie-pic {
+        height: 150px;
+        width: auto;
+    }
+}
+
+/* lg */
+@media (min-width: 992px) {
+    .movie-pic {
+        height: 150px;
+        width: auto;
+    }
+}
+
+/* xl */
+@media (min-width: 1200px) {
+    .movie-pic {
+        height: 150px;
+        width: auto;
+    }
+}
+
+/* xxl */
+@media (min-width: 1600px) {
+    .movie-pic {
+        height: 150px;
+        width: auto;
+    }
+}
+
+.movie-pic {
+    /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.10);*/
+    position: relative;
+}
+
+.LongCommentPreviewCard .ant-card-body {
+    padding: 15px 8px;
+}

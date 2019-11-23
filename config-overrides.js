@@ -10,8 +10,9 @@ module.exports = override(
     addLessLoader({
         javascriptEnabled: true,
         modifyVars: {
-            '@primary-color': '#FACB07',
-            '@menu-background-color': '#FACB07',
+            '@primary-color': '#fac200',
+            '@menu-background-color': '#fac200',
+            '@link-color': '#fac200',
             '@menu-selected-color': '#474747',
             '@menu-dark-color': '@menu-selected-color',
             '@menu-dark-bg': '@menu-background-color',
@@ -24,7 +25,7 @@ module.exports = override(
             '@menu-dark-item-hover-bg': 'transparent',
             '@layout-sider-background': '@menu-background-color',
             '@layout-trigger-height': '48px',
-            '@layout-trigger-background': '#FAE807',
+            '@layout-trigger-background': '#fad500',
             '@layout-trigger-color': '@menu-selected-color',
         },
     }),

@@ -2,24 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bf85f5b-3ca7-493c-9504-9259c9c2d0a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/widget/CommentPreviewCard/CommentPreviewCard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widget/CommentPreviewCard/CommentPreviewCard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widget/MoviesSingleLineList/MoviesSingleLineList.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widget/MoviesSingleLineList/MoviesSingleLineList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widget/LongCommentList/LongCommentList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widget/LongCommentPreviewCard/LongCommentPreviewCard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widget/LongCommentPreviewList/LongCommentPreviewList.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-overrides.js" beforeDir="false" afterPath="$PROJECT_DIR$/config-overrides.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LongCommentList.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/MoviesGallery/MoviesGallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MoviesGallery/MoviesGallery.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/TheatricalLine/TheatricalLine.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TheatricalLine/TheatricalLine.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ShortCommentList.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widget/Banner/Banner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/Banner/Banner.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widget/CommentPreview/CommentPreview.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/CommentList/CommentList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widget/CommentPreview/CommentPreview.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/CommentList/CommentList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widget/MoviePreviewCard/MoviePreviewCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/MoviePreviewCard/MoviePreviewCard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widget/MoviePreviewCard/MoviePreviewCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/MoviePreviewCard/MoviePreviewCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widget/MoviesList/MoviesList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/MoviesList/MoviesList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widget/CommentList/CommentList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HottestComments/HottestComments.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widget/CommentList/CommentList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/LongCommentPreviewList/LongCommentPreviewList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widget/CommentPreviewCard/CommentPreviewCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/LongCommentList/LongCommentList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widget/CommentPreviewCard/CommentPreviewCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/LongCommentPreviewCard/LongCommentPreviewCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widget/MoviesSingleLineList/MoviesSingleLineList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget/MoviesSingleLineList/MoviesSingleLineList.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,19 +65,19 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/pages/MoviesDetail" />
-      <recent name="$PROJECT_DIR$/src/widget/CommentPage" />
-      <recent name="$PROJECT_DIR$/src/widget/Banner" />
-      <recent name="$PROJECT_DIR$/src/widget/TitleBarPage" />
-      <recent name="$PROJECT_DIR$/src/widget/MoviePreviewBox" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/widget" />
       <recent name="$PROJECT_DIR$/src/widget/MoviePreview" />
       <recent name="$PROJECT_DIR$/src/pages/Login" />
       <recent name="$PROJECT_DIR$/src/utils" />
       <recent name="$PROJECT_DIR$/src/pages/MoviesGallery" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/MoviesDetail" />
+      <recent name="$PROJECT_DIR$/src/widget/CommentPage" />
+      <recent name="$PROJECT_DIR$/src/widget/Banner" />
+      <recent name="$PROJECT_DIR$/src/widget/TitleBarPage" />
+      <recent name="$PROJECT_DIR$/src/widget/MoviePreviewBox" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -131,7 +130,8 @@
       <workItem from="1574306766720" duration="811000" />
       <workItem from="1574415861395" duration="556000" />
       <workItem from="1574423260784" duration="466000" />
-      <workItem from="1574427988718" duration="11432000" />
+      <workItem from="1574427988718" duration="14253000" />
+      <workItem from="1574508255759" duration="12407000" />
     </task>
     <servers />
   </component>
@@ -150,5 +150,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/config-overrides.js</url>
+          <line>14</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

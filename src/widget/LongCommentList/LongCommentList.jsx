@@ -1,17 +1,20 @@
 import React from "react";
-import './CommentList.css'
-import {Button, Col, Divider, List, Pagination, Row, Typography} from "antd";
+import './LongCommentList.css'
+import {Col, Divider, List, Pagination, Row, Typography} from "antd";
 import * as PropTypes from "prop-types";
-import CommentPreviewCard from "../CommentPreviewCard/CommentPreviewCard";
+import LongCommentPreviewCard from "../LongCommentPreviewCard/LongCommentPreviewCard";
 
 const {Title} = Typography;
 
-export default class CommentList extends React.Component {
+export default class LongCommentList extends React.Component {
     static propTypes = {
         isLastNode: PropTypes.bool,
         isFirstNode: PropTypes.bool,
         withTitle: PropTypes.bool,
-        withShowMoreButton: PropTypes.bool,
+        // 选填
+        withAuthorPicShow: PropTypes.bool,
+        withMoviePicShow: PropTypes.bool,
+        withLikeOrDisLike: PropTypes.bool,
         title: PropTypes.string,
         data: PropTypes.array,
     };
@@ -19,7 +22,9 @@ export default class CommentList extends React.Component {
     static defaultProps = {
         isLastNode: false,
         isFirstNode: false,
-        withShowMoreButton: false
+        withAuthorPicShow: false,
+        withMoviePicShow: false,
+        withLikeOrDisLike: false,
     };
 
     constructor(props) {
@@ -40,26 +45,9 @@ export default class CommentList extends React.Component {
         };
     }
 
-    getPageSize = () => {
-        if (this.state.windowWidth >= 992) {
-            // lg 及以上
-            return 6;
-        } else if (this.state.windowWidth >= 768) {
-            // md 及以上
-            return 4;
-        } else if (this.state.windowWidth >= 576) {
-            // sm 及以上
-            return 3;
-        } else {
-            // xs
-            return 2;
-        }
-    };
-
     getData() {
         let page = this.state.currentPage;
         let pageSize = this.state.pageSize;
-        console.log((page - 1) * pageSize + " " + page * pageSize)
         if (page * pageSize <= this.state.total) {
             this.setState({
                 dataArray: this.props.data.slice((page - 1) * pageSize, (page * pageSize))
@@ -71,28 +59,6 @@ export default class CommentList extends React.Component {
         }
     }
 
-    onWindowResize = () => {
-        this.setState({
-            windowWidth: window.innerWidth,
-        });
-    };
-
-    // 监测屏幕变化
-    componentDidMount() {
-        this.setState({pageSize: this.getPageSize()}, () => this.getData());
-        window.addEventListener('resize', this.onWindowResize);
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        let pageSize = this.getPageSize();
-        if (prevState.pageSize !== pageSize) {
-            this.setState({pageSize: this.getPageSize()}, () => this.getData());
-        }
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.onWindowResize);
-    }
 
     render() {
         const {isFirstNode, isLastNode, withTitle, withShowMoreButton, title} = this.props;
@@ -107,31 +73,47 @@ export default class CommentList extends React.Component {
                         <Col>
                             <Title level={4}>{title}</Title>
                         </Col>
-                        {withShowMoreButton ?
-                            <Col>
-                                <Button type="link">
-                                    查看更多 >
-                                </Button>
-                            </Col> : null}
                     </Row> : null}
                 <List itemLayout="horizontal"
                       dataSource={this.state.dataArray}
                       renderItem={item => (
                           <List.Item key={item.key} style={{padding: '5px'}}>
-                              <CommentPreviewCard name={item.name} score={item.score}
-                                                  imgSrc={item.imgSrc}/>
+                              <LongCommentPreviewCard
+                                  authorId={item.authorId}
+                                  movieId={item.movieId}
+                                  commentId={item.commentId}
+                                  authorName={item.authorName}
+                                  movieName={item.movieName}
+                                  movieScore={item.movieScore}
+                                  editTime={item.editTime}
+                                  commentTitle={item.commentTitle}
+                                  commentContent={item.commentContent}
+                                  withAuthorPicShow={this.props.withAuthorPicShow}
+                                  authorPic={item.authorPic}
+                                  withMoviePicShow={this.props.withMoviePicShow}
+                                  moviePic={item.moviePic}
+                                  withLikeOrDisLike={this.props.withLikeOrDisLike}
+                                  likeNumber={item.likeNumber}
+                                  dislikeNumber={item.dislikeNumber}
+                                  replyNumber={item.replyNumber}
+                              />
                           </List.Item>
                       )}
                 />
                 <Row type="flex" justify="end">
                     <Col>
-                        <Pagination simple
-                                    defaultCurrent={1}
-                                    pageSize={this.state.pageSize}
-                                    total={this.state.total}
-                                    onChange={(page, pageSize) => {
-                                        this.setState({currentPage: page}, () => this.getData())
-                                    }}/>
+                        <Pagination
+                            showSizeChanger
+                            onChange={(page, pageSize) => {
+                                this.setState({currentPage: page, pageSize: pageSize})
+                            }}
+                            onShowSizeChange={(current, pageSize) => {
+                                this.setState({pageSize: pageSize})
+                            }}
+                            pageSizeOptions={['5', '10', '20', '30', '40']}
+                            defaultCurrent={1}
+                            total={this.state.total}
+                        />
                     </Col>
                 </Row>
                 {!isLastNode ? <Divider/> : <div style={{margin: '20px'}}/>}

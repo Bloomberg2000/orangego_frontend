@@ -80,15 +80,10 @@ class App extends React.Component {
                             <span>选电影</span>
                             <Link to="/moviesGallery"/>
                         </Menu.Item>
-                        <Menu.Item key="/ranking">
-                            <OrangoGoIcon type="icon-ranking"/>
-                            <span>排行榜</span>
-                            <Link to="/"/>
-                        </Menu.Item>
-                        <Menu.Item key="/comment">
+                        <Menu.Item key="/hottestComments">
                             <OrangoGoIcon type="icon-comment"/>
                             <span>影评</span>
-                            <Link to="/"/>
+                            <Link to="/hottestComments"/>
                         </Menu.Item>
                     </Menu>
                 </Sider>
