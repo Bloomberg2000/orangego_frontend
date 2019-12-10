@@ -28,7 +28,7 @@ export default class LongCommentPreviewCard extends React.Component {
         likeNumber: PropTypes.number,
         dislikeNumber: PropTypes.number,
         replyNumber: PropTypes.number,
-    }
+    };
 
 
     constructor(props, context) {
@@ -60,7 +60,7 @@ export default class LongCommentPreviewCard extends React.Component {
     render() {
         const {likes, dislikes, action} = this.state;
         return (
-            <div className={"LongCommentPreviewCard"} style={{width: '100%'}}>
+            <div className={"long_comment_preview_card"} style={{width: '100%'}}>
                 <Card bordered={false} style={{width: "100%"}}>
                     <Row type="flex" justify="space-between">
                         <Col xs={this.props.withMoviePicShow ? 19 : 24}
@@ -133,7 +133,6 @@ export default class LongCommentPreviewCard extends React.Component {
                                     backgroundRepeat: 'no-repeat',
                                     backgroundSize: 'contain'
                                 }}/>
-
                             </Col> : null}
                     </Row>
                 </Card>

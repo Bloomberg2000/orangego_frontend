@@ -1,0 +1,138 @@
+/* xs */
+@media (max-width: 576px) {
+    .awards-details-switch-wrapper {
+        height: 240px;
+    }
+
+    .awards-details-switch {
+        height: 160px;
+    }
+
+    .awards-details h4.ant-typography, .ant-typography h4 {
+        font-size: 30px;
+    }
+}
+
+/* sm */
+@media (min-width: 576px) {
+    .awards-details-switch-wrapper {
+        height: 240px;
+    }
+
+    .awards-details-switch {
+        height: 160px;
+    }
+
+    .awards-details h4.ant-typography, .ant-typography h4 {
+        font-size: 35px;
+    }
+}
+
+/* md */
+@media (min-width: 768px) {
+    .awards-details-switch-wrapper {
+        height: 240px;
+    }
+
+    .awards-details-switch {
+        height: 160px;
+    }
+
+    .awards-details h4.ant-typography, .ant-typography h4 {
+        font-size: 30px;
+    }
+}
+
+/* lg */
+@media (min-width: 992px) {
+    .awards-details-switch-wrapper {
+        height: 240px;
+    }
+
+    .awards-details-switch {
+        height: 160px;
+    }
+
+    .awards-details h4.ant-typography, .ant-typography h4 {
+        font-size: 35px;
+    }
+}
+
+/* xl */
+@media (min-width: 1200px) {
+    .awards-details-switch-wrapper {
+        height: 240px;
+    }
+
+    .awards-details-switch {
+        height: 160px;
+    }
+
+    .awards-details h4.ant-typography, .ant-typography h4 {
+        font-size: 35px;
+    }
+}
+
+/* xxl */
+@media (min-width: 1600px) {
+    .awards-details-switch-wrapper {
+        height: 240px;
+    }
+
+    .awards-details-switch {
+        height: 160px;
+    }
+
+    .awards-details h4.ant-typography, .ant-typography h4 {
+        font-size: 40px;
+    }
+}
+
+.awards-details-switch-wrapper {
+    position: relative;
+    overflow: hidden;
+    transition: background 1s;
+}
+
+.awards-details-switch {
+    margin: 40px auto;
+    width: 90%;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.awards-details-switch-text-wrapper {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.awards-details-switch-text-wrapper em {
+    height: 2px;
+    width: 60px;
+    border-radius: 2px;
+    display: block;
+}
+
+.awards-details-switch-text-wrapper p {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.awards-details {
+    overflow: hidden;
+    position: relative;
+}
+
+.awards-details-right-panel {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    padding: 10px;
+}

@@ -16,15 +16,15 @@
 
 /* md */
 @media (min-width: 768px) {
-    .LongCommentPreviewCard .ant-card {
+    .long_comment_preview_card .ant-card {
         font-size: 14px;
     }
 
-    .LongCommentPreviewCard .ant-rate-star:not(:last-child) {
+    .long_comment_preview_card .ant-rate-star:not(:last-child) {
         margin-right: 4px;
     }
 
-    .LongCommentPreviewCard .ant-rate {
+    .long_comment_preview_card .ant-rate {
         font-size: 14px;
     }
 
@@ -63,6 +63,6 @@
     position: relative;
 }
 
-.LongCommentPreviewCard .ant-card-body {
+.long_comment_preview_card .ant-card-body {
     padding: 15px 8px;
 }

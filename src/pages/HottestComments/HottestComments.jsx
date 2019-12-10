@@ -140,7 +140,7 @@ const longCommentList = [
         dislikeNumber: 20,
         replyNumber: 8,
     },
-]
+];
 
 export default class HottestComments extends React.Component {
     render() {
@@ -148,7 +148,8 @@ export default class HottestComments extends React.Component {
             <div id="home">
                 <QueueAnim delay={300}>
                     <TitleBar key="a" title={"影评"}/>
-                    <LongCommentList key="b" withTitle={true} title={"最受欢迎的影评"} data={longCommentList}
+                    <LongCommentList key="b" withTitle={true} title={"最受欢迎的影评"}
+                                     data={longCommentList}
                                             isFirstNode={true}
                                             isLastNode={true}
                                             withMoviePicShow={true}

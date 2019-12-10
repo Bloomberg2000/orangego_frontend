@@ -1,0 +1,150 @@
+/* xs */
+@media (max-width: 576px) {
+    .staff-details-switch-wrapper {
+        height: 240px;
+    }
+
+    .staff-details-switch {
+        height: 160px;
+    }
+
+    .staff-detail h4.ant-typography, .ant-typography h4 {
+        font-size: 30px;
+    }
+}
+
+/* sm */
+@media (min-width: 576px) {
+    .staff-details-switch-wrapper {
+        height: 240px;
+    }
+
+    .staff-details-switch {
+        height: 160px;
+    }
+
+    .staff-detail h4.ant-typography, .ant-typography h4 {
+        font-size: 35px;
+    }
+}
+
+/* md */
+@media (min-width: 768px) {
+    .staff-details-switch-wrapper {
+        height: 240px;
+    }
+
+    .staff-details-switch {
+        height: 160px;
+    }
+
+    .staff-detail h4.ant-typography, .ant-typography h4 {
+        font-size: 30px;
+    }
+}
+
+/* lg */
+@media (min-width: 992px) {
+    .staff-details-switch-wrapper {
+        height: 240px;
+    }
+
+    .staff-details-switch {
+        height: 160px;
+    }
+
+    .staff-detail h4.ant-typography, .ant-typography h4 {
+        font-size: 35px;
+    }
+}
+
+/* xl */
+@media (min-width: 1200px) {
+    .staff-details-switch-wrapper {
+        height: 240px;
+    }
+
+    .staff-details-switch {
+        height: 160px;
+    }
+
+    .staff-detail h4.ant-typography, .ant-typography h4 {
+        font-size: 35px;
+    }
+}
+
+/* xxl */
+@media (min-width: 1600px) {
+    .staff-details-switch-wrapper {
+        height: 240px;
+    }
+
+    .staff-details-switch {
+        height: 160px;
+    }
+
+    .staff-detail h4.ant-typography, .ant-typography h4 {
+        font-size: 40px;
+    }
+}
+
+.staff-details-switch-wrapper {
+    position: relative;
+    overflow: hidden;
+    transition: background 1s;
+}
+
+.staff-details-switch {
+    margin: 40px auto;
+    width: 90%;
+    /*background: #fff;*/
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.staff-details-switch-text-wrapper {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.staff-details-switch-text-wrapper em {
+    height: 2px;
+    width: 60px;
+    border-radius: 2px;
+    display: block;
+}
+
+.staff-details-switch-text-wrapper p {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.staff-detail {
+    overflow: hidden;
+    position: relative;
+}
+
+.staff-detail-left-panel {
+    display: inline-block;
+    height: 100%;
+    width: 45%;
+    position: relative;
+    overflow: hidden;
+    text-align: end;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.staff-detail-right-panel {
+    display: inline-block;
+    height: 100%;
+    width: 55%;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    padding: 10px;
+}

@@ -14,7 +14,8 @@ export default class Banner extends React.Component {
     state = {
         windowWidth: window.innerWidth,
         isBannerHover: false,
-        isButtonHover: false
+        isButtonHover: false,
+        activeSlideIndex: 0
     };
 
     constructor(props) {
@@ -34,15 +35,16 @@ export default class Banner extends React.Component {
     };
 
     // 监测屏幕变化
-    componentDidMount() {
-        window.addEventListener('resize', this.onWindowResize);
-    }
+    // componentDidMount() {
+    //
+    // }
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.onWindowResize);
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
+    componentDidMount() {
+        window.addEventListener('resize', this.onWindowResize);
         let slidesPreView = 0;
         let slidesPerGroup = 1;
         if (this.state.windowWidth >= 1200) {
@@ -62,7 +64,7 @@ export default class Banner extends React.Component {
             direction: 'horizontal',//竖向轮播
             loop: true,
             navigation: {
-                nextEl: '.swiper-next',
+                nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
         })
@@ -72,25 +74,25 @@ export default class Banner extends React.Component {
         this.setState({
             isBannerHover: true
         })
-    }
+    };
 
     onMouseLeaveBannerAction = () => {
         this.setState({
             isBannerHover: false
         })
-    }
+    };
 
     onMouseOverButtonAction = () => {
         this.setState({
             isButtonHover: true
         })
-    }
+    };
 
     onMouseLeaveButtonAction = () => {
         this.setState({
             isButtonHover: false
         })
-    }
+    };
 
     render() {
         return (
@@ -139,6 +141,9 @@ export default class Banner extends React.Component {
                                     style={{opacity: (this.state.isButtonHover) ? 1 : (this.state.isBannerHover ? 0.5 : 0)}}
                                     onClick={() => {
                                         this.swiper.slideNext();
+                                        this.setState({
+                                            activeSlideIndex: this.swiper.activeIndex
+                                        })
                                     }}>
                                 <Icon type="right"/>
                             </Button>

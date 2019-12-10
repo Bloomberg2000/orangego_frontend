@@ -16,7 +16,6 @@ export default class LongCommentList extends React.Component {
         withMoviePicShow: PropTypes.bool,
         withLikeOrDisLike: PropTypes.bool,
         title: PropTypes.string,
-        data: PropTypes.array,
     };
 
     static defaultProps = {
@@ -29,12 +28,6 @@ export default class LongCommentList extends React.Component {
 
     constructor(props) {
         super(props);
-        /**
-         * 为数组添加Key
-         */
-        for (let i = 0; i < props.data.length; i++) {
-            props.data[i]['key'] = i;
-        }
         this.state = {
             windowWidth: window.innerWidth,
             total: this.props.data.length,

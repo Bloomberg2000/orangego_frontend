@@ -10,7 +10,7 @@ const data = [
     {name:'罗小黑战记',score:8.8,imgSrc:"https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"},
     {name:'罗小黑战记',score:8.8,imgSrc:"https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"},
     {name:'罗小黑战记',score:8.8,imgSrc:"https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"},
-]
+];
 
 export default class TheatricalLine extends React.Component {
     render() {

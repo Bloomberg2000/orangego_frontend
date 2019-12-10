@@ -1,119 +1,119 @@
 /* xs */
 @media (max-width: 576px) {
-    .ant-card-meta-title {
+    .movie-preview-card .ant-card-meta-title {
         font-size: 14px;
     }
 
-    .ant-card {
+    .movie-preview-card .ant-card {
         font-size: 10px;
 
     }
 
-    .ant-rate-star:not(:last-child) {
+    .movie-preview-card .ant-rate-star:not(:last-child) {
         margin-right: 1px;
     }
 
-    .ant-rate {
+    .movie-preview-card .ant-rate {
         font-size: 6px;
     }
 }
 
 /* sm */
 @media (min-width: 576px) {
-    .ant-card-meta-title {
+    .movie-preview-card .ant-card-meta-title {
         font-size: 16px;
     }
 
-    .ant-card {
+    .movie-preview-card .ant-card {
         font-size: 13px;
 
     }
 
-    .ant-rate-star:not(:last-child) {
+    .movie-preview-card .ant-rate-star:not(:last-child) {
         margin-right: 2px;
     }
 
-    .ant-rate {
+    .movie-preview-card .ant-rate {
         font-size: 10px;
     }
 }
 
 /* md */
 @media (min-width: 768px) {
-    .ant-card-meta-title {
+    .movie-preview-card .ant-card-meta-title {
 
     }
 
-    .ant-card {
+    .movie-preview-card .ant-card {
         font-size: 16px;
     }
 
-    .ant-rate-star:not(:last-child) {
+    .movie-preview-card .ant-rate-star:not(:last-child) {
         margin-right: 4px;
     }
 
-    .ant-rate {
+    .movie-preview-card .ant-rate {
         font-size: 16px;
     }
 }
 
 /* lg */
 @media (min-width: 992px) {
-    .ant-card-meta-title {
+    .movie-preview-card .ant-card-meta-title {
 
     }
 
-    .ant-card {
+    .movie-preview-card .ant-card {
         font-size: 13px;
 
     }
 
-    .ant-rate-star:not(:last-child) {
+    .movie-preview-card .ant-rate-star:not(:last-child) {
         margin-right: 4px;
     }
 
-    .ant-rate {
+    .movie-preview-card .ant-rate {
         font-size: 12px;
     }
 }
 
 /* xl */
 @media (min-width: 1200px) {
-    .ant-card-meta-title {
+    .movie-preview-card .ant-card-meta-title {
 
     }
 
-    .ant-card {
+    .movie-preview-card .ant-card {
         font-size: 12px;
 
     }
 
-    .ant-rate-star:not(:last-child) {
+    .movie-preview-card .ant-rate-star:not(:last-child) {
         margin-right: 4px;
     }
 
-    .ant-rate {
+    .movie-preview-card .ant-rate {
         font-size: 12px;
     }
 }
 
 /* xxl */
 @media (min-width: 1600px) {
-    .ant-card-meta-title {
+    .movie-preview-card .ant-card-meta-title {
 
     }
 
-    .ant-card {
+    .movie-preview-card .ant-card {
         font-size: 15px;
 
     }
 
-    .ant-rate {
+    .movie-preview-card .ant-rate {
         font-size: 15px;
     }
 }
 
-.ant-card-body {
+.movie-preview-card .ant-card-body {
     padding: 17px;
     zoom: 1;
 }

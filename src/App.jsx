@@ -11,8 +11,8 @@ const {Search} = Input;
 const {Header, Content, Footer, Sider} = Layout;
 
 // iconfont在线图标
-const OrangoGoIcon = Icon.createFromIconfontCN({
-    scriptUrl: '//at.alicdn.com/t/font_1510677_jqa56lk9e5.js', // 在 iconfont.cn 上生成
+export const OrangoGoIcon = Icon.createFromIconfontCN({
+    scriptUrl: '//at.alicdn.com/t/font_1510677_vakqx848k1.js', // 在 iconfont.cn 上生成
 });
 
 // 搜索栏

@@ -1,69 +1,212 @@
 /* xs */
 @media (max-width: 576px) {
-    .movie-picture {
-        height: 280px;
-        width: 90%;
-        margin: 13px;
+    .details-switch-wrapper {
+        height: 300px;
+    }
+
+    .details-switch {
+        height: 220px;
+    }
+
+    .details-switch-img-wrapper {
+        width: 30%;
+    }
+
+    .details-switch-text-wrapper {
+        width: 70%;
     }
 }
 
 /* sm */
 @media (min-width: 576px) {
-    .movie-picture {
-        height: 380px;
-        width: 90%;
-        margin: 13px;
+    .details-switch-wrapper {
+        height: 340px;
+    }
+
+    .details-switch {
+        height: 260px;
+    }
+
+    .details-switch-img-wrapper {
+        width: 30%;
+    }
+
+    .details-switch-text-wrapper {
+        width: 70%;
     }
 }
 
 /* md */
 @media (min-width: 768px) {
-    .movie-picture {
-        height: 250px;
-        width: 100%;
-        margin: 13px;
+    .details-switch-wrapper {
+        height: 380px;
+    }
+
+    .details-switch {
+        height: 300px;
+    }
+
+    .details-switch-img-wrapper {
+        width: 30%;
+    }
+
+    .details-switch-text-wrapper {
+        width: 70%;
     }
 }
 
 /* lg */
 @media (min-width: 992px) {
-    .movie-picture {
-        height: 290px;
-        width: 100%;
-        margin: 13px;
+    .details-switch-wrapper {
+        height: 450px;
+    }
+
+    .details-switch {
+        height: 370px;
+    }
+
+    .details-switch-img-wrapper {
+        width: 30%;
+    }
+
+    .details-switch-text-wrapper {
+        width: 70%;
     }
 }
 
 /* xl */
 @media (min-width: 1200px) {
-    .movie-picture {
-        height: 300px;
-        width: 100%;
-        margin: 13px;
+    .details-switch-wrapper {
+        height: 500px;
+    }
+
+    .details-switch {
+        height: 420px;
+    }
+
+    .details-switch-img-wrapper {
+        width: 30%;
+    }
+
+    .details-switch-text-wrapper {
+        width: 70%;
+    }
+
+    .details-switch-text-wrapper .banner-anim-elem {
+        padding: 40px;
+    }
+
+    .movie-detail h4.ant-typography, .ant-typography h4 {
+        font-size: 30px;
+    }
+
+    .details-switch-text-wrapper em {
+
     }
 }
 
 /* xxl */
 @media (min-width: 1600px) {
-    .movie-picture {
-        min-height: 400px;
-        width: 100%;
-        margin: 10px;
+    .details-switch-wrapper {
+        height: 600px;
     }
 
-    .movie-info-text {
-        min-height: 400px;
-        width: 100%;
-        margin: 10px;
-        padding: 0 20px;
+    .details-switch {
+        height: 520px;
+    }
+
+    .details-switch-img-wrapper {
+        width: 30%;
+    }
+
+    .details-switch-text-wrapper {
+        width: 70%;
+    }
+
+    .movie-detail .ant-rate {
+        font-size: 14px;
+    }
+
+    .movie-detail .ant-progress-text {
+        margin-left: 3px;
+        font-size: 12px;
+    }
+
+    .score-total h1.ant-typography, .ant-typography h1 {
+        margin: 0;
+    }
+
+    .score-total .ant-rate {
+        font-size: 20px;
     }
 }
 
-.movie-picture {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.10);
+.movie-detail .ant-progress-success-bg, .ant-progress-bg {
+    background-color: #fadb14;;
+}
+
+.movie-detail .score-preview .ant-rate {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.details-switch-wrapper {
+    position: relative;
+    overflow: hidden;
+    transition: background 1s;
+}
+
+.details-switch {
+    margin: 40px auto;
+    width: 90%;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
     position: relative;
 }
 
-.movie-picture:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.10);
+.details-switch-img-wrapper {
+    display: inline-block;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
 }
+
+.details-switch-text-wrapper {
+    display: inline-block;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.details-switch-pic {
+    position: absolute;
+}
+
+.details-switch-text-wrapper em {
+    height: 2px;
+    width: 60px;
+    border-radius: 2px;
+    display: block;
+}
+
+.details-switch-text-wrapper p {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/*.details-switch-wrapper .anticon {*/
+/*    position: absolute;*/
+/*    font-size: 24px;*/
+/*    top: 50%;*/
+/*    margin-top: -12px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.details-switch-wrapper .anticon-left {*/
+/*    left: 5px;*/
+/*    z-index: 999;*/
+/*}*/
+
+/*.details-switch-wrapper .anticon-right {*/
+/*    right: 5px;*/
+/*}*/

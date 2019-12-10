@@ -10,12 +10,13 @@ export default class MoviePreviewCard extends React.Component {
         name: PropTypes.string,
         score: PropTypes.number,
         imgSrc: PropTypes.string
-    }
+    };
 
     render() {
         const {name, score, imgSrc} = this.props;
         return (
             <Card
+                className={"movie-preview-card"}
                 hoverable
                 cover={<img alt="example" src={imgSrc}/>}
             >

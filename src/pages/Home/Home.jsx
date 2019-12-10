@@ -73,7 +73,7 @@ const bannerData = [
         description: "2012",
         imgSrc: "https://pic4.iqiyipic.com/image/20191108/d4/86/a_100345137_m_601_m7_220_124.jpg"
     },
-]
+];
 
 const moviesData = [
     {name: '罗小黑战记', score: 8.1, imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"},
@@ -81,8 +81,44 @@ const moviesData = [
     {name: '罗小黑战记', score: 8.3, imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"},
     {name: '罗小黑战记', score: 8.4, imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"},
     {name: '罗小黑战记', score: 8.5, imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"},
+    {
+        name: '罗小黑战记',
+        score: 8.6,
+        imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"
+    }, {
+        name: '罗小黑战记',
+        score: 8.5,
+        imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"
+    },
+    {
+        name: '罗小黑战记',
+        score: 8.6,
+        imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"
+    }, {
+        name: '罗小黑战记',
+        score: 8.5,
+        imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"
+    },
+    {
+        name: '罗小黑战记',
+        score: 8.6,
+        imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"
+    }, {
+        name: '罗小黑战记',
+        score: 8.5,
+        imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"
+    },
+    {
+        name: '罗小黑战记',
+        score: 8.6,
+        imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"
+    }, {
+        name: '罗小黑战记',
+        score: 8.5,
+        imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"
+    },
     {name: '罗小黑战记', score: 8.6, imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"},
-]
+];
 
 const moviesGalleryFilterList = [
     {value: "热门", key: '1'},
@@ -93,7 +129,7 @@ const moviesGalleryFilterList = [
     {value: "欧美", key: '6'},
     {value: "韩国", key: '7'},
     {value: "日本", key: '8'},
-]
+];
 
 const longCommentList = [
     {
@@ -108,7 +144,7 @@ const longCommentList = [
         commentTitle: "评论标题",
         commentContent: "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
         authorPic: "https://img3.doubanio.com/icon/u1881299-343.jpg",
-        moviePic: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p689520756.webp",
+        moviePic: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2572847101.webp",
         likeNumber: 10,
         dislikeNumber: 20,
         replyNumber: 8,
@@ -125,7 +161,7 @@ const longCommentList = [
         commentTitle: "评论标题",
         commentContent: "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
         authorPic: "https://img3.doubanio.com/icon/u1881299-343.jpg",
-        moviePic: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p689520756.webp",
+        moviePic: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2572847101.webp",
         likeNumber: 10,
         dislikeNumber: 20,
         replyNumber: 8,
@@ -142,7 +178,7 @@ const longCommentList = [
         commentTitle: "评论标题",
         commentContent: "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
         authorPic: "https://img3.doubanio.com/icon/u1881299-343.jpg",
-        moviePic: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p689520756.webp",
+        moviePic: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2572847101.webp",
         likeNumber: 10,
         dislikeNumber: 20,
         replyNumber: 8,
@@ -159,7 +195,7 @@ const longCommentList = [
         commentTitle: "评论标题",
         commentContent: "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
         authorPic: "https://img3.doubanio.com/icon/u1881299-343.jpg",
-        moviePic: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p689520756.webp",
+        moviePic: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2572847101.webp",
         likeNumber: 10,
         dislikeNumber: 20,
         replyNumber: 8,
@@ -176,7 +212,7 @@ const longCommentList = [
         commentTitle: "评论标题",
         commentContent: "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
         authorPic: "https://img3.doubanio.com/icon/u1881299-343.jpg",
-        moviePic: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p689520756.webp",
+        moviePic: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2572847101.webp",
         likeNumber: 10,
         dislikeNumber: 20,
         replyNumber: 8,
@@ -193,7 +229,7 @@ const longCommentList = [
         commentTitle: "评论标题",
         commentContent: "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
         authorPic: "https://img3.doubanio.com/icon/u1881299-343.jpg",
-        moviePic: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p689520756.webp",
+        moviePic: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2572847101.webp",
         likeNumber: 10,
         dislikeNumber: 20,
         replyNumber: 8,
@@ -210,7 +246,7 @@ const longCommentList = [
         commentTitle: "评论标题",
         commentContent: "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
         authorPic: "https://img3.doubanio.com/icon/u1881299-343.jpg",
-        moviePic: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p689520756.webp",
+        moviePic: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2572847101.webp",
         likeNumber: 10,
         dislikeNumber: 20,
         replyNumber: 8,
@@ -227,12 +263,12 @@ const longCommentList = [
         commentTitle: "评论标题",
         commentContent: "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
         authorPic: "https://img3.doubanio.com/icon/u1881299-343.jpg",
-        moviePic: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p689520756.webp",
+        moviePic: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2572847101.webp",
         likeNumber: 10,
         dislikeNumber: 20,
         replyNumber: 8,
     },
-]
+];
 
 
 export default class Home extends React.Component {
@@ -248,7 +284,8 @@ export default class Home extends React.Component {
                                           withShowMoreButton={true}
                                           withFilter={true}
                                           filterList={moviesGalleryFilterList}/>
-                    <LongCommentPreviewList key="e" withTitle={true} title={"最受欢迎的影评"} data={longCommentList} isLastNode={true}
+                    <LongCommentPreviewList key="e" withTitle={true} title={"最受欢迎的影评"} data={longCommentList}
+                                            isLastNode={true}
                                             withShowMoreButton={true}
                                             withMoviePicShow={true}/>
                 </QueueAnim>

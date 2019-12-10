@@ -46,7 +46,10 @@ export default class MoviesSingleLineList extends React.Component {
     }
 
     getPageSize = () => {
-        if (this.state.windowWidth >= 992) {
+        if (this.state.windowWidth >= 1200) {
+            // xxl 及以上
+            return 8;
+        } else if (this.state.windowWidth >= 992) {
             // lg 及以上
             return 6;
         } else if (this.state.windowWidth >= 768) {
@@ -133,7 +136,7 @@ export default class MoviesSingleLineList extends React.Component {
                         </CheckableTag>
                     )) : null}
                 <List grid={{
-                    gutter: 16, xs: 2, sm: 3, md: 4, lg: 6, xl: 6, xxl: 6,
+                    gutter: 16, xs: 2, sm: 3, md: 4, lg: 6, xl: 6, xxl: 8,
                 }}
                       dataSource={this.state.dataArray}
                       renderItem={item => (
@@ -154,7 +157,7 @@ export default class MoviesSingleLineList extends React.Component {
                                     }}/>
                     </Col>
                 </Row>
-                {!isLastNode ? <Divider/> : null}
+                {!isLastNode ? <Divider/> : <div style={{margin: '20px'}}/>}
             </div>
         );
     }

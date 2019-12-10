@@ -10,10 +10,10 @@ export default class TitleBar extends React.Component {
     static propTypes = {
         title: PropTypes.string,
         withUserAvatar: PropTypes.bool
-    }
+    };
     static defaultProps = {
         withUserAvatar: true
-    }
+    };
     state = {
         isMobile: false,
     };
