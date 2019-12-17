@@ -1,12 +1,5 @@
 /* xs */
 @media (max-width: 576px) {
-    .long_comment_preview_card .ant-rate-star {
-        font-size: 14px;
-    }
-
-    .long_comment_preview_card .ant-rate-star:not(:last-child) {
-        margin-right: 4px;
-    }
     .movie-pic {
         height: 150px;
         width: auto;
@@ -15,14 +8,6 @@
 
 /* sm */
 @media (min-width: 576px) {
-    .long_comment_preview_card .ant-rate-star {
-        font-size: 14px;
-    }
-
-    .long_comment_preview_card .ant-rate-star:not(:last-child) {
-        margin-right: 4px;
-    }
-
     .movie-pic {
         height: 150px;
         width: auto;

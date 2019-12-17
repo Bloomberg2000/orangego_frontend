@@ -10,7 +10,7 @@
         padding: 10px 15px 10px 15px;
     }
 
-    .banner-title{
+    .banner-title {
         font-size: 23px;
     }
 
@@ -35,7 +35,7 @@
         padding: 10px 15px 10px 15px;
     }
 
-    .banner-title{
+    .banner-title {
         font-size: 26px;
     }
 
@@ -60,7 +60,7 @@
         padding: 8px 10px 8px 10px;
     }
 
-    .banner-title{
+    .banner-title {
         font-size: 18px;
     }
 
@@ -85,7 +85,7 @@
         padding: 10px 15px 10px 15px;
     }
 
-    .banner-title{
+    .banner-title {
         font-size: 21px;
     }
 
@@ -110,7 +110,7 @@
         padding: 10px 13px 10px 13px;
     }
 
-    .banner-title{
+    .banner-title {
         font-size: 22px;
     }
 
@@ -135,7 +135,7 @@
         padding: 10px 20px 10px 20px;
     }
 
-    .banner-title{
+    .banner-title {
         font-size: 22px;
     }
 
@@ -162,20 +162,19 @@
     position: absolute;
     width: 100%;
     height: 25%;
-    background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,1));;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 1));;
     bottom: 0;
     border-radius: 0 0 9px 9px;
     text-align: left;
 }
 
-.banner-title{
+.banner-title {
     font-weight: bold;
 }
 
 .banner-description {
     color: rgba(0, 0, 0, 0.45);
 }
-
 .swiper-container {
     width: 100%;
 }
@@ -190,7 +189,7 @@
     visibility: hidden;
 }
 
-.swiper-custom-button{
+.swiper-custom-button {
     margin-left: 25px;
     opacity: 0;
 }

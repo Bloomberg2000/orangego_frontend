@@ -67,11 +67,11 @@ export default class LongCommentPreviewCard extends React.Component {
                              md={this.props.withMoviePicShow ? 21 : 24}
                             xl={this.props.withMoviePicShow ? 22 : 24}>
                             {this.props.withAuthorPicShow ?
-                                <Row type="flex" justify="start" align="middle">
-                                    <Avatar src={this.props.authorPic}/>
-                                    <Button type="link">{this.props.authorName}</Button>
+                                <Row type="flex" justify="start" align="middle"  style={{padding: '5px 0'}}>
+                                    <Avatar src={this.props.authorPic} style={{margin: '0 10px 0 0'}}/>
+                                    <Button type="link" style={{padding: '0'}}>{this.props.authorName}</Button>
                                     <Rate disabled allowHalf defaultValue={Math.round(this.props.movieScore) / 2}/>
-                                    <Text type="secondary" style={{marginLeft: '10px'}}>{this.props.editTime}</Text>
+                                    <Text type="secondary" style={{marginLeft: '5px'}}>{this.props.editTime}</Text>
                                 </Row>
                                 : null}
                             <Row>

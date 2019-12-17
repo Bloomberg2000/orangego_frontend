@@ -1,5 +1,4 @@
 .login-page {
-    min-height: 650px;
     overflow: initial;
     padding-top: 1px;
 }
@@ -48,7 +47,6 @@
 
 .page2-product {
     background: #fff;
-    padding: 40px 20px;
 }
 
 .page2-product .product-block {
@@ -127,8 +125,4 @@ element.style {
     height: 104px;
     display: flex;
     align-items: center;
-}
-
-.login-page-components, .page2-product {
-    min-height: 500px;
 }

@@ -275,9 +275,9 @@ export default class Home extends React.Component {
     render() {
         return (
             <div id="home">
-                <QueueAnim delay={300}>
+                {/*<QueueAnim delay={300}>*/}
                     <TitleBar key="a" title={"为您推荐"}/>
-                    <Banner key="b" data={bannerData} pageSize={3}/>
+                    <Banner key="b" data={bannerData}/>
                     <MoviesSingleLineList key="c" withTitle={true} title={"正在热映"} data={moviesData} isFirstNode={true}
                                           withShowMoreButton={true}/>
                     <MoviesSingleLineList key="d" withTitle={true} title={"热门电影"} data={moviesData}
@@ -288,7 +288,7 @@ export default class Home extends React.Component {
                                             isLastNode={true}
                                             withShowMoreButton={true}
                                             withMoviePicShow={true}/>
-                </QueueAnim>
+                {/*</QueueAnim>*/}
             </div>
         );
     }

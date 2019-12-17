@@ -1,14 +1,24 @@
 import React from "react";
-import './Banner.css'
-import {Button, Col, Icon, Row} from "antd";
+import './StaffList.css'
+import {Avatar, Button, Col, Divider, Icon, Row, Typography} from "antd";
 import * as PropTypes from "prop-types";
 import Swiper from "swiper";
 import 'swiper/css/swiper.css'
 
-export default class Banner extends React.Component {
+const {Title} = Typography;
+export default class StaffList extends React.Component {
 
     static propTypes = {
+        isLastNode: PropTypes.bool,
+        isFirstNode: PropTypes.bool,
         data: PropTypes.array,
+        withTitle: PropTypes.bool,
+        title: PropTypes.string,
+    };
+    static defaultProps = {
+        isLastNode: false,
+        isFirstNode: false,
+        withTitle: false,
     };
 
     state = {
@@ -30,7 +40,7 @@ export default class Banner extends React.Component {
     onWindowResize = () => {
         this.setState({
             windowWidth: window.innerWidth
-        }, this.buildSwiper);
+        });
     };
 
     componentWillUnmount() {
@@ -39,31 +49,14 @@ export default class Banner extends React.Component {
 
     componentDidMount() {
         window.addEventListener('resize', this.onWindowResize);
-        this.buildSwiper();
-    }
-
-    buildSwiper = () => {
-        let slidesPreView = 0;
-        let slidesPerGroup = 1;
-        if (this.state.windowWidth >= 1200) {
-            slidesPreView = 3.25;
-            slidesPerGroup = 1;
-        } else if (this.state.windowWidth >= 768) {
-            slidesPreView = 2.25;
-            slidesPerGroup = 1;
-        } else {
-            slidesPreView = 1.25;
-            slidesPerGroup = 1;
-        }
-        this.swiper = new Swiper('.bannerSwiper', {
-            slidesPerView: slidesPreView,
-            slidesPerGroup: slidesPerGroup,
-            freeMode: false,
+        this.swiper = new Swiper('.staffListSwiper', {
+            slidesPerView: 'auto',
+            slidesPerGroup: 1,
+            freeMode: true,
             direction: 'horizontal',//竖向轮播
-            loop: true,
             navigation: {
-                nextEl: '.bannerSwiperNextButton',
-                prevEl: '.bannerSwiperPrevButton',
+                nextEl: '.staffListSwiperNextButton',
+                prevEl: '.staffListSwiperPrevButton',
             },
         })
     }
@@ -93,26 +86,36 @@ export default class Banner extends React.Component {
     };
 
     render() {
+        const {withTitle, isFirstNode, isLastNode, title} = this.props;
         return (
-            <div id="BannerPage" style={{background: '#f7f7f7', padding: '0'}}>
+            <div id="staffList" style={{
+                background: '#fff',
+                padding: (isFirstNode === true) ? '20px 20px 1px 20px' : '0px 20px 1px 20px'
+            }}>
+                {withTitle ?
+                    <Row type="flex" justify="space-between" align="middle">
+                        <Col>
+                            <Title level={4}>{title}</Title>
+                        </Col>
+                    </Row> : null}
                 <Row type="flex" justify="space-around" align="middle">
-                    <Col span={24} style={{textAlign: "center", padding: '0 20px 0 20px'}}>
-                        <div className="swiper-container bannerSwiper" onMouseLeave={this.onMouseLeaveBannerAction}
+                    <Col span={24} style={{textAlign: "center", padding: '0 5px 0 5px'}}>
+                        <div className="swiper-container staffListSwiper" onMouseLeave={this.onMouseLeaveBannerAction}
                              onMouseOver={this.onMouseOverBannerAction}>
                             <div className="swiper-wrapper">
                                 {
                                     this.props.data.map((item) => {
                                         return (
-                                            <div key={item.key} className="swiper-slide">
-                                                <div className="banner-box" style={{
-                                                    backgroundImage: 'url(' + item.imgSrc + ')',
-                                                    backgroundPosition: 'center',
-                                                    backgroundRepeat: 'no repeat',
-                                                    backgroundSize: 'cover'
-                                                }}>
-                                                    <div className="banner-info">
-                                                        <div className="banner-title">{item.title}</div>
-                                                        <div className="banner-description">{item.description}</div>
+                                            <div key={item.key} className="swiper-slide" style={{width:'200px'}}>
+                                                <div className={"staff-card"} key={"1"}>
+                                                    <div className={"staff-card-img"}>
+                                                        <Avatar size={128} src={item.staffPic}/>
+                                                    </div>
+                                                    <div className={"staff-card-text"}>
+                                                        <div>
+                                                            <span style={{fontSize:'20px',fontWeight:'bold'}}>{item.staffName}</span><br/>
+                                                            <span style={{color: "rgba(0,0,0,0.6)"}}>{item.staffWork}</span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -121,7 +124,7 @@ export default class Banner extends React.Component {
                                 }
                             </div>
                         </div>
-                        <div className="swiper-button-prev bannerSwiperPrevButton">
+                        <div className="swiper-button-prev staffListSwiperPrevButton">
                             <Button className="swiper-custom-button" shape="circle"
                                     onMouseLeave={this.onMouseLeaveButtonAction}
                                     onMouseOver={this.onMouseOverButtonAction}
@@ -132,7 +135,7 @@ export default class Banner extends React.Component {
                                 <Icon type="left"/>
                             </Button>
                         </div>
-                        <div className="swiper-button-next bannerSwiperNextButton">
+                        <div className="swiper-button-next staffListSwiperNextButton">
                             <Button className="swiper-custom-button" shape="circle"
                                     onMouseLeave={this.onMouseLeaveButtonAction}
                                     onMouseOver={this.onMouseOverButtonAction}
@@ -145,6 +148,7 @@ export default class Banner extends React.Component {
                         </div>
                     </Col>
                 </Row>
+                {!isLastNode ? <Divider/> : <div style={{margin: '20px'}}/>}
             </div>
         );
     }

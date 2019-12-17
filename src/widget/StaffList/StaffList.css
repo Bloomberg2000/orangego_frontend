@@ -1,0 +1,47 @@
+/* xs */
+@media (max-width: 576px) {
+}
+
+/* sm */
+@media (min-width: 576px) {
+}
+
+/* md */
+@media (min-width: 768px) {
+}
+
+/* lg */
+@media (min-width: 992px) {
+}
+
+/* xl */
+@media (min-width: 1200px) {
+}
+
+/* xxl */
+@media (min-width: 1600px) {
+
+}
+
+.swiper-container {
+    width: 100%;
+}
+
+.staffListSwiper {
+    height: 250px !important;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+    visibility: hidden;
+}
+
+.swiper-custom-button {
+    margin-left: 25px;
+    opacity: 0;
+}

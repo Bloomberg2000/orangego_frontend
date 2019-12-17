@@ -1,19 +1,83 @@
 /* xs */
 @media (max-width: 576px) {
     .details-switch-wrapper {
-        height: 300px;
+        height: 320px;
     }
 
     .details-switch {
-        height: 220px;
+        height: 240px;
     }
 
     .details-switch-img-wrapper {
-        width: 30%;
+        width: 40%;
     }
 
     .details-switch-text-wrapper {
-        width: 70%;
+        width: 60%;
+    }
+
+    .details-switch-text-wrapper .banner-anim-elem {
+        padding: 15px;
+    }
+
+    .movie-detail h4.ant-typography, .ant-typography h4 {
+        font-size: 18px;
+    }
+
+    .movie-detail .ant-rate {
+        font-size: 10px;
+    }
+
+    .movie-detail .ant-rate-star:not(:last-child) {
+        margin-right: 4px;
+    }
+
+    .movie-detail .ant-progress-text {
+        margin-left: 3px;
+        font-size: 12px;
+    }
+
+    .score-total h1.ant-typography, .ant-typography h1 {
+        margin: 0;
+        font-size: 38px;
+    }
+
+    .score-total .ant-rate {
+        font-size: 16px;
+    }
+
+    .movie-detail .ant-descriptions-item-label {
+        font-size: 10px;
+    }
+
+    .movie-detail .ant-descriptions-item-content {
+        font-size: 10px;
+    }
+
+    .movie-detail .ant-descriptions-row > th, .ant-descriptions-row > td {
+        padding-bottom: 0;
+    }
+
+    .mobile-score-board h1.ant-typography, .ant-typography h1 {
+        font-size: 40px;
+        margin: 0 ;
+    }
+
+    .mobile-score-board .score-preview .ant-rate {
+        font-size: 13px;
+    }
+
+    .mobile-score-board .score-preview .ant-rate-star:not(:last-child) {
+        margin-right: 6px;
+    }
+
+    .mobile-score-board .score-total .ant-rate {
+        font-size: 16px;
+        padding: 5px 0;
+    }
+
+    .mobile-score-board .score-total .ant-rate-star:not(:last-child) {
+        margin-right: 6px;
     }
 }
 
@@ -34,6 +98,70 @@
     .details-switch-text-wrapper {
         width: 70%;
     }
+
+    .details-switch-text-wrapper .banner-anim-elem {
+        padding: 15px;
+    }
+
+    .movie-detail h4.ant-typography, .ant-typography h4 {
+        font-size: 18px;
+    }
+
+    .movie-detail .ant-rate {
+        font-size: 10px;
+    }
+
+    .movie-detail .ant-rate-star:not(:last-child) {
+        margin-right: 4px;
+    }
+
+    .movie-detail .ant-progress-text {
+        margin-left: 3px;
+        font-size: 12px;
+    }
+
+    .score-total h1.ant-typography, .ant-typography h1 {
+        margin: 0;
+        font-size: 38px;
+    }
+
+    .score-total .ant-rate {
+        font-size: 16px;
+    }
+
+    .movie-detail .ant-descriptions-item-label {
+        font-size: 12px;
+    }
+
+    .movie-detail .ant-descriptions-item-content {
+        font-size: 12px;
+    }
+
+    .movie-detail .ant-descriptions-row > th, .ant-descriptions-row > td {
+        padding-bottom: 0;
+    }
+
+    .mobile-score-board h1.ant-typography, .ant-typography h1 {
+        font-size: 50px;
+        margin: 0;
+    }
+
+    .mobile-score-board .score-preview .ant-rate {
+        font-size: 13px;
+    }
+
+    .mobile-score-board .score-preview .ant-rate-star:not(:last-child) {
+        margin-right: 6px;
+    }
+
+    .mobile-score-board .score-total .ant-rate {
+        font-size: 16px;
+        padding: 5px 0;
+    }
+
+    .mobile-score-board .score-total .ant-rate-star:not(:last-child) {
+        margin-right: 6px;
+    }
 }
 
 /* md */
@@ -53,6 +181,62 @@
     .details-switch-text-wrapper {
         width: 70%;
     }
+
+    .details-switch-text-wrapper .banner-anim-elem {
+        padding: 20px;
+    }
+
+    .movie-detail h4.ant-typography, .ant-typography h4 {
+        font-size: 20px;
+    }
+
+    .movie-detail .ant-rate {
+        font-size: 10px;
+    }
+
+    .movie-detail .ant-rate-star:not(:last-child) {
+        margin-right: 4px;
+    }
+
+    .movie-detail .ant-progress-text {
+        margin-left: 3px;
+        font-size: 12px;
+    }
+
+    .score-total h1.ant-typography, .ant-typography h1 {
+        margin: 0;
+        font-size: 38px;
+    }
+
+    .score-total .ant-rate {
+        font-size: 16px;
+    }
+
+    .movie-detail .ant-descriptions-item-label {
+        font-size: 12px;
+    }
+
+    .movie-detail .ant-descriptions-item-content {
+        font-size: 12px;
+    }
+
+    .movie-detail .ant-descriptions-row > th, .ant-descriptions-row > td {
+        padding-bottom: 5px;
+    }
+
+    .mobile-score-board h1.ant-typography, .ant-typography h1 {
+        font-size: 50px;
+        margin: 0;
+    }
+
+    .mobile-score-board .score-preview .ant-rate {
+        font-size: 16px;
+    }
+
+    .mobile-score-board .score-total .ant-rate {
+        font-size: 20px;
+        padding: 5px 0;
+    }
 }
 
 /* lg */
@@ -71,6 +255,62 @@
 
     .details-switch-text-wrapper {
         width: 70%;
+    }
+
+    .details-switch-text-wrapper .banner-anim-elem {
+        padding: 30px;
+    }
+
+    .movie-detail h4.ant-typography, .ant-typography h4 {
+        font-size: 25px;
+    }
+
+    .movie-detail .ant-rate {
+        font-size: 10px;
+    }
+
+    .movie-detail .ant-rate-star:not(:last-child) {
+        margin-right: 4px;
+    }
+
+    .movie-detail .ant-progress-text {
+        margin-left: 3px;
+        font-size: 12px;
+    }
+
+    .score-total h1.ant-typography, .ant-typography h1 {
+        margin: 0;
+        font-size: 38px;
+    }
+
+    .score-total .ant-rate {
+        font-size: 16px;
+    }
+
+    .movie-detail .ant-descriptions-item-label {
+        font-size: 13px;
+    }
+
+    .movie-detail .ant-descriptions-item-content {
+        font-size: 13px;
+    }
+
+    .movie-detail .ant-descriptions-row > th, .ant-descriptions-row > td {
+        padding-bottom: 10px;
+    }
+
+    .mobile-score-board h1.ant-typography, .ant-typography h1 {
+        font-size: 50px;
+        margin: 0;
+    }
+
+    .mobile-score-board .score-preview .ant-rate {
+        font-size: 16px;
+    }
+
+    .mobile-score-board .score-total .ant-rate {
+        font-size: 20px;
+        padding: 10px 0;
     }
 }
 
@@ -93,15 +333,45 @@
     }
 
     .details-switch-text-wrapper .banner-anim-elem {
-        padding: 40px;
+        padding: 35px;
     }
 
     .movie-detail h4.ant-typography, .ant-typography h4 {
         font-size: 30px;
     }
 
-    .details-switch-text-wrapper em {
+    .movie-detail .ant-rate {
+        font-size: 10px;
+    }
 
+    .movie-detail .ant-rate-star:not(:last-child) {
+        margin-right: 4px;
+    }
+
+    .movie-detail .ant-progress-text {
+        margin-left: 3px;
+        font-size: 12px;
+    }
+
+    .score-total h1.ant-typography, .ant-typography h1 {
+        margin: 0;
+        font-size: 38px;
+    }
+
+    .score-total .ant-rate {
+        font-size: 16px;
+    }
+
+    .movie-detail .ant-descriptions-item-label {
+        font-size: 14px;
+    }
+
+    .movie-detail .ant-descriptions-item-content {
+        font-size: 14px;
+    }
+
+    .movie-detail .ant-descriptions-row > th, .ant-descriptions-row > td {
+        padding-bottom: 12px;
     }
 }
 
@@ -123,8 +393,20 @@
         width: 70%;
     }
 
+    .details-switch-text-wrapper .banner-anim-elem {
+        padding: 40px;
+    }
+
+    .movie-detail h4.ant-typography, .ant-typography h4 {
+        font-size: 30px;
+    }
+
     .movie-detail .ant-rate {
         font-size: 14px;
+    }
+
+    .movie-detail .ant-rate-star:not(:last-child) {
+        margin-right: 8px;
     }
 
     .movie-detail .ant-progress-text {
@@ -134,18 +416,33 @@
 
     .score-total h1.ant-typography, .ant-typography h1 {
         margin: 0;
+        font-size: 38px;
     }
 
     .score-total .ant-rate {
         font-size: 20px;
     }
+
+    .movie-detail .ant-descriptions-item-label {
+        font-size: 14px;
+    }
+
+    .movie-detail .ant-descriptions-item-content {
+        font-size: 14px;
+    }
+
+    .movie-detail .ant-descriptions-row > th, .ant-descriptions-row > td {
+        padding-bottom: 14px;
+    }
 }
 
-.movie-detail .ant-progress-success-bg, .ant-progress-bg {
+.movie-detail .ant-progress-success-bg, .ant-progress-bg,
+.mobile-score-board .score-preview .ant-progress-success-bg, .ant-progress-bg {
     background-color: #fadb14;;
 }
 
-.movie-detail .score-preview .ant-rate {
+.movie-detail .score-preview .ant-rate,
+.mobile-score-board .score-preview .ant-rate {
     color: rgba(0, 0, 0, 0.3);
 }
 
@@ -194,19 +491,26 @@
     margin-top: 10px;
 }
 
-/*.details-switch-wrapper .anticon {*/
-/*    position: absolute;*/
-/*    font-size: 24px;*/
-/*    top: 50%;*/
-/*    margin-top: -12px;*/
-/*    cursor: pointer;*/
-/*}*/
+.swiper-container {
+    width: 100%;
+}
 
-/*.details-switch-wrapper .anticon-left {*/
-/*    left: 5px;*/
-/*    z-index: 999;*/
-/*}*/
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-/*.details-switch-wrapper .anticon-right {*/
-/*    right: 5px;*/
-/*}*/
+.swiper-button-prev:after, .swiper-button-next:after {
+    visibility: hidden;
+}
+
+.swiper-custom-button {
+    margin-left: 25px;
+    opacity: 0;
+}
+
+.movie-detail .ant-card-actions {
+    background: #ffffff;
+}
+

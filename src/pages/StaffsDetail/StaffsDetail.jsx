@@ -115,8 +115,8 @@ export default class StaffsDetail extends React.Component {
                                             </div>
                                             <div className={"staff-detail-right-panel"}>
                                                 <Title level={4}>
-                                                    {name}<span
-                                                    style={{color: "rgba(0,0,0,0.6)"}}>{foreignName}</span>
+                                                    {name}<br/>
+                                                    <span style={{color: "rgba(0,0,0,0.6)"}}>{foreignName}</span>
                                                 </Title>
                                             </div>
                                         </div>
