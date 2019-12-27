@@ -10,8 +10,8 @@ export default class Loading extends React.Component {
         return (
             <div className={"loading"} style={{height: '100%', width: '100%'}}>
                 <Row type="flex" justify="space-around" align="middle" style={{height: '100%'}}>
-                    <Col span={4}>
-                        <Spin size={'large'} tip="正在加载..."/>
+                    <Col>
+                        <Spin size={'large'}/>
                     </Col>
                 </Row>
             </div>

@@ -3,6 +3,8 @@ import './MoviesSingleLineList.css'
 import {Button, Col, Divider, List, Pagination, Row, Tag, Typography} from "antd";
 import MoviePreviewCard from "../MoviePreviewCard/MoviePreviewCard";
 import * as PropTypes from "prop-types";
+import {Route} from "react-router";
+import Loading from "../Loading/Loading";
 
 const {CheckableTag} = Tag;
 
@@ -15,30 +17,30 @@ export default class MoviesSingleLineList extends React.Component {
         withTitle: PropTypes.bool,
         withFilter: PropTypes.bool,
         withShowMoreButton: PropTypes.bool,
+        withPagination: PropTypes.bool,
+        ShowMoreHref: PropTypes.string,
         title: PropTypes.string,
         data: PropTypes.array,
-        filterList: PropTypes.array
+        filterList: PropTypes.array,
+        total: PropTypes.number,
+        lineNum: PropTypes.number
     };
 
     static defaultProps = {
         isLastNode: false,
         isFirstNode: false,
         withFilter: false,
+        lineNum: 1,
+        withPagination: true,
         withShowMoreButton: false
     };
 
     constructor(props) {
         super(props);
-        /**
-         * 为数组添加Key
-         */
-        for (let i = 0; i < props.data.length; i++) {
-            props.data[i]['key'] = i;
-        }
         this.state = {
             windowWidth: window.innerWidth,
-            total: this.props.data.length,
-            pageSize: 0,
+            data: this.props.data,
+            total: this.props.total,
             currentPage: 1,
             dataArray: [],
             selectedTags: [],
@@ -48,23 +50,26 @@ export default class MoviesSingleLineList extends React.Component {
     getPageSize = () => {
         if (this.state.windowWidth >= 1600) {
             // xxl 及以上
-            return 8;
+            return 8 * this.props.lineNum;
         } else if (this.state.windowWidth >= 992) {
             // lg 及以上
-            return 6;
+            return 6 * this.props.lineNum;
         } else if (this.state.windowWidth >= 768) {
             // md 及以上
-            return 4;
+            return 4 * this.props.lineNum;
         } else if (this.state.windowWidth >= 576) {
             // sm 及以上
-            return 3;
+            return 3 * this.props.lineNum;
         } else {
             // xs
-            return 2;
+            return 2 * this.props.lineNum;
         }
     };
 
     getData() {
+        if (this.state.data === null) {
+            return;
+        }
         let page = this.state.currentPage;
         let pageSize = this.state.pageSize;
         if (page * pageSize <= this.state.total) {
@@ -91,10 +96,16 @@ export default class MoviesSingleLineList extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        let pageSize = this.getPageSize();
-        if (prevState.pageSize !== pageSize) {
+        if (prevState.total !== this.props.total) {
             this.setState({pageSize: this.getPageSize()}, () => this.getData());
         }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            data: nextProps.data,
+            total: nextProps.total
+        });
     }
 
     componentWillUnmount() {
@@ -116,9 +127,15 @@ export default class MoviesSingleLineList extends React.Component {
                         </Col>
                         {withShowMoreButton ?
                             <Col>
-                                <Button type="link">
-                                    查看更多 >
-                                </Button>
+                                <Route render={({match, history}) => {
+                                    return (
+                                        <Button type="link" onClick={() => {
+                                            history.push(this.props.ShowMoreHref)
+                                        }}>
+                                            查看更多 >
+                                        </Button>
+                                    )
+                                }}/>
                             </Col> : null}
                     </Row> : null}
                 {withFilter ?
@@ -135,28 +152,34 @@ export default class MoviesSingleLineList extends React.Component {
                             {item.value}
                         </CheckableTag>
                     )) : null}
-                <List grid={{
-                    gutter: 16, xs: 2, sm: 3, md: 4, lg: 6, xl: 6, xxl: 8,
-                }}
-                      dataSource={this.state.dataArray}
-                      renderItem={item => (
-                          <List.Item key={item.key} style={{padding: '5px'}}>
-                              <MoviePreviewCard id={item.id} name={item.name} score={item.score}
-                                                imgSrc={item.imgSrc}/>
-                          </List.Item>
-                      )}
-                />
-                <Row type="flex" justify="end">
-                    <Col>
-                        <Pagination simple
-                                    defaultCurrent={1}
-                                    pageSize={this.state.pageSize}
-                                    total={this.state.total}
-                                    onChange={(page, pageSize) => {
-                                        this.setState({currentPage: page}, () => this.getData())
-                                    }}/>
-                    </Col>
-                </Row>
+                {this.state.data === null ?
+                    <div style={{height: '100%'}}>
+                        <Loading/>
+                    </div> :
+                    <List grid={{
+                        gutter: 16, xs: 2, sm: 3, md: 4, lg: 6, xl: 6, xxl: 8,
+                    }}
+                          dataSource={this.state.dataArray}
+                          renderItem={item => (
+                              <List.Item key={item.key} style={{padding: '5px'}}>
+                                  <MoviePreviewCard id={item.id} name={item.name} score={item.score}
+                                                    imgSrc={item.imgSrc}/>
+                              </List.Item>
+                          )}
+                    />}
+                {this.props.withPagination ?
+                    <Row type="flex" justify="end">
+                        <Col>
+                            <Pagination simple
+                                        defaultCurrent={1}
+                                        current={1}
+                                        pageSize={this.state.pageSize}
+                                        total={this.state.total}
+                                        onChange={(page, pageSize) => {
+                                            this.setState({currentPage: page}, () => this.getData())
+                                        }}/>
+                        </Col>
+                    </Row> : null}
                 {!isLastNode ? <Divider/> : <div style={{margin: '20px'}}/>}
             </div>
         );

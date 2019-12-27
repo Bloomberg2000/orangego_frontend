@@ -2,6 +2,7 @@ import React from "react";
 import './LongCommentPreviewCard.css'
 import {Avatar, Button, Card, Col, Icon, Rate, Row, Tooltip, Typography} from "antd";
 import * as PropTypes from "prop-types";
+import {Route} from "react-router";
 
 const {Text, Paragraph} = Typography;
 
@@ -88,7 +89,7 @@ export default class LongCommentPreviewCard extends React.Component {
                                 <Row type="flex" justify="start" align="middle" style={{padding: '10px 0'}}>
                                     <Text type="secondary">{this.props.authorName}</Text>
                                     <Text type="secondary" style={{margin: '0 10px'}}>评论</Text>
-                                    <a>{this.props.movieName}</a>
+                                    <a href={"/movie/" + this.props.movieId}>{this.props.movieName}</a>
                                     <Rate disabled allowHalf style={{marginLeft: '10px', marginBottom: '6px'}}
                                           defaultValue={Math.round(this.props.movieScore) / 2}/>
                                 </Row>
@@ -123,14 +124,23 @@ export default class LongCommentPreviewCard extends React.Component {
                                 </Row> : null}
                         </Col>
                         {this.props.withMoviePicShow ?
-                            <Col xs={5} md={3} xl={2}>
-                                <div className="movie-pic" style={{
-                                    backgroundImage: 'url(' + this.props.moviePic + ')',
-                                    backgroundPosition: 'top right',
-                                    backgroundRepeat: 'no-repeat',
-                                    backgroundSize: 'contain'
-                                }}/>
-                            </Col> : null}
+                            <Route render={({match, history}) => {
+                                return (
+                                    <Col xs={5} md={3} xl={2}>
+                                        <div className="movie-pic"
+                                             style={{
+                                                 backgroundImage: 'url(' + this.props.moviePic + ')',
+                                                 backgroundPosition: 'top right',
+                                                 backgroundRepeat: 'no-repeat',
+                                                 backgroundSize: 'contain'
+                                             }}
+                                             onClick={() => {
+                                                 history.push("/movie/" + this.props.movieId);
+                                             }}/>
+                                    </Col>
+                                )
+                            }} /> : null}
+
                     </Row>
                 </Card>
             </div>

@@ -1,161 +1,69 @@
 import React from "react";
 import QueueAnim from "rc-queue-anim";
 import TitleBar from "../../widget/TitleBar/TitleBar";
-import LongCommentList from "../../widget/LongCommentList/LongCommentList";
+import LongCommentPreviewList from "../../widget/LongCommentPreviewList/LongCommentPreviewList";
+import axios from "axios";
 
-const longCommentList = [
-    {
-        authorId: 1,
-        movieId: 1,
-        commentId: 1,
-// 基本信息
-        authorName: "评论人1",
-        movieName: "电影名",
-        movieScore: 8.0,
-        editTime: "2019-11-23 16:28:30",
-        commentTitle: "评论标题",
-        commentContent: "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
-        authorPic: "https://img3.doubanio.com/icon/u1881299-343.jpg",
-        moviePic: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p689520756.webp",
-        likeNumber: 10,
-        dislikeNumber: 20,
-        replyNumber: 8,
-    },
-    {
-        authorId: 1,
-        movieId: 1,
-        commentId: 1,
-// 基本信息
-        authorName: "评论人2",
-        movieName: "电影名",
-        movieScore: 8.0,
-        editTime: "2019-11-23 16:28:30",
-        commentTitle: "评论标题",
-        commentContent: "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
-        authorPic: "https://img3.doubanio.com/icon/u1881299-343.jpg",
-        moviePic: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p689520756.webp",
-        likeNumber: 10,
-        dislikeNumber: 20,
-        replyNumber: 8,
-    },
-    {
-        authorId: 1,
-        movieId: 1,
-        commentId: 1,
-// 基本信息
-        authorName: "评论人3",
-        movieName: "电影名",
-        movieScore: 8.0,
-        editTime: "2019-11-23 16:28:30",
-        commentTitle: "评论标题",
-        commentContent: "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
-        authorPic: "https://img3.doubanio.com/icon/u1881299-343.jpg",
-        moviePic: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p689520756.webp",
-        likeNumber: 10,
-        dislikeNumber: 20,
-        replyNumber: 8,
-    },
-    {
-        authorId: 1,
-        movieId: 1,
-        commentId: 1,
-// 基本信息
-        authorName: "评论人4",
-        movieName: "电影名",
-        movieScore: 8.0,
-        editTime: "2019-11-23 16:28:30",
-        commentTitle: "评论标题",
-        commentContent: "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
-        authorPic: "https://img3.doubanio.com/icon/u1881299-343.jpg",
-        moviePic: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p689520756.webp",
-        likeNumber: 10,
-        dislikeNumber: 20,
-        replyNumber: 8,
-    },
-    {
-        authorId: 1,
-        movieId: 1,
-        commentId: 1,
-// 基本信息
-        authorName: "评论人5",
-        movieName: "电影名",
-        movieScore: 8.0,
-        editTime: "2019-11-23 16:28:30",
-        commentTitle: "评论标题",
-        commentContent: "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
-        authorPic: "https://img3.doubanio.com/icon/u1881299-343.jpg",
-        moviePic: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p689520756.webp",
-        likeNumber: 10,
-        dislikeNumber: 20,
-        replyNumber: 8,
-    },
-    {
-        authorId: 1,
-        movieId: 1,
-        commentId: 1,
-// 基本信息
-        authorName: "评论人6",
-        movieName: "电影名",
-        movieScore: 8.0,
-        editTime: "2019-11-23 16:28:30",
-        commentTitle: "评论标题",
-        commentContent: "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
-        authorPic: "https://img3.doubanio.com/icon/u1881299-343.jpg",
-        moviePic: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p689520756.webp",
-        likeNumber: 10,
-        dislikeNumber: 20,
-        replyNumber: 8,
-    },
-    {
-        authorId: 1,
-        movieId: 1,
-        commentId: 1,
-// 基本信息
-        authorName: "评论人7",
-        movieName: "电影名",
-        movieScore: 8.0,
-        editTime: "2019-11-23 16:28:30",
-        commentTitle: "评论标题",
-        commentContent: "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
-        authorPic: "https://img3.doubanio.com/icon/u1881299-343.jpg",
-        moviePic: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p689520756.webp",
-        likeNumber: 10,
-        dislikeNumber: 20,
-        replyNumber: 8,
-    },
-    {
-        authorId: 1,
-        movieId: 1,
-        commentId: 1,
-// 基本信息
-        authorName: "评论人8",
-        movieName: "电影名",
-        movieScore: 8.0,
-        editTime: "2019-11-23 16:28:30",
-        commentTitle: "评论标题",
-        commentContent: "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
-        authorPic: "https://img3.doubanio.com/icon/u1881299-343.jpg",
-        moviePic: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p689520756.webp",
-        likeNumber: 10,
-        dislikeNumber: 20,
-        replyNumber: 8,
-    },
-];
 
 export default class HottestComments extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            hotLongCommentListTotal: 0,
+            hotLongCommentList: null
+        }
+    }
+
+    componentDidMount() {
+        this.getHotLongCommentData();
+    }
+
+    getHotLongCommentData() {
+        axios.get("/api/longComments/hot").then(
+            res => {
+                let longCommentList = [];
+                let i = 0;
+                for (let comment of res.data.comments) {
+                    longCommentList.push({
+                        key: i++,
+                        movieId: comment.comments.movieid,
+                        commentId: comment.comments.longcommentsid,
+                        // 基本信息
+                        authorName: comment.comments.username,
+                        movieName: comment.comments.moviename,
+                        movieScore: comment.comments.score * 2,
+                        editTime: comment.comments.createtimedate,
+                        commentTitle: comment.comments.longcommentstitle,
+                        commentContent: comment.comments.longcommentscontent,
+                        authorPic: comment.comments.useravatar,
+                        moviePic: comment.comments.moviecover,
+                        likeNumber: comment.longcommentslikenum,
+                        dislikeNumber: comment.longcommentsunlikenum,
+                        likeType: comment.likeType
+                    })
+                }
+                console.log(longCommentList);
+                this.setState({
+                    hotLongCommentListLoading: true,
+                    hotLongCommentListTotal: longCommentList.length,
+                    hotLongCommentList: longCommentList,
+                })
+            }
+        )
+    }
     render() {
         return (
             <div id="home">
                 <QueueAnim delay={300}>
-                    <TitleBar key="a" title={"影评"}/>
-                    <LongCommentList key="b" withTitle={true} title={"最受欢迎的影评"}
-                                     data={longCommentList}
+                    <TitleBar key="a" title={"最受欢迎的影评"}/>
+                    <LongCommentPreviewList key="e"
+                                            data={this.state.hotLongCommentList}
+                                            total={this.state.hotLongCommentListTotal}
+                                            pageSize={50}
                                             isFirstNode={true}
                                             isLastNode={true}
-                                            withMoviePicShow={true}
-                                            withAuthorPicShow={true}
-                                            withLikeOrDisLike={true}
-                                            showPagination={false}/>
+                                            withPagination={false}
+                                            withMoviePicShow={true}/>
                 </QueueAnim>
             </div>);
     }

@@ -1,5 +1,5 @@
 import React from "react";
-import './ShortCommentPreviewList.css'
+import './ShortCommentList.css'
 import {Button, Col, Divider, List, Pagination, Row, Typography} from "antd";
 import * as PropTypes from "prop-types";
 import ShortCommentPreviewCard from "../ShortCommentPreviewCard/ShortCommentPreviewCard";
@@ -7,7 +7,7 @@ import Loading from "../Loading/Loading";
 
 const {Title} = Typography;
 
-export default class ShortCommentPreviewList extends React.Component {
+export default class ShortCommentList extends React.Component {
     static propTypes = {
         isLastNode: PropTypes.bool,
         isFirstNode: PropTypes.bool,
@@ -47,7 +47,6 @@ export default class ShortCommentPreviewList extends React.Component {
         this.props.getDataFunction(page, pageSize);
     }
 
-    // 监测屏幕变化
     componentDidMount() {
         this.updateData();
     }

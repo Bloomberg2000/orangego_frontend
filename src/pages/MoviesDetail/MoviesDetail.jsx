@@ -7,12 +7,13 @@ import TitleBar from "../../widget/TitleBar/TitleBar";
 import ColorThief from "../../utils/ColorThief";
 import {Button, Card, Col, Descriptions, Divider, Icon, Popover, Progress, Rate, Row, Typography} from 'antd';
 import LongCommentPreviewList from "../../widget/LongCommentPreviewList/LongCommentPreviewList";
-import ShortCommentPreviewList from "../../widget/ShortCommentPreviewList/ShortCommentPreviewList";
+import ShortCommentList from "../../widget/ShortCommentList/ShortCommentList";
 import DiscussesList from "../../widget/DiscussesList/DiscussesList";
 import StaffList from "../../widget/StaffList/StaffList";
 import axios from "axios";
 import Error from "../../widget/Error/Error";
 import Loading from "../../widget/Loading/Loading";
+import LongCommentList from "../../widget/LongCommentList/LongCommentList";
 
 const {Title, Paragraph, Text} = Typography;
 const Element = BannerAnim.Element;
@@ -159,7 +160,7 @@ export default class MoviesDetail extends React.Component {
                         // 基本信息
                         authorName: comment.username,
                         movieName: "",
-                        movieScore: comment.score,
+                        movieScore: comment.score * 2,
                         editTime: comment.createTime,
                         commentTitle: comment.title,
                         commentContent: comment.content,
@@ -473,8 +474,6 @@ export default class MoviesDetail extends React.Component {
                                 })}
                             </Col>
                         </Row>
-                        <Row>
-                        </Row>
                         <Divider/>
                     </div> : null}
                 <div key="c" style={{
@@ -492,12 +491,12 @@ export default class MoviesDetail extends React.Component {
                     <Divider/>
                 </div>
                 <StaffList key="d" withTitle={true} title={name + " 的演职人员"} data={staffList}/>
-                <ShortCommentPreviewList key="e" withTitle={true} title={name + " 的短评"}
-                                         data={this.state.shortCommentList} total={this.state.shortCommentTotal}
-                                         page={this.state.shortCommentPage}
-                                         withLike={true} getDataFunction={this.getShortCommentData.bind(this)}/>
+                <ShortCommentList key="e" withTitle={true} title={name + " 的短评"}
+                                  data={this.state.shortCommentList} total={this.state.shortCommentTotal}
+                                  page={this.state.shortCommentPage}
+                                  withLike={true} getDataFunction={this.getShortCommentData.bind(this)}/>
 
-                <LongCommentPreviewList key="f" withTitle={true} title={name + " 的长评"}
+                <LongCommentList key="f" withTitle={true} title={name + " 的长评"}
                                         data={this.state.longCommentList} total={this.state.longCommentTotal}
                                         page={this.state.longCommentPage}
                                         getDataFunction={this.getLongCommentData.bind(this)}

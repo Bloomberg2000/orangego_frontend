@@ -4,6 +4,7 @@ import {Button, Col, Icon, Row} from "antd";
 import * as PropTypes from "prop-types";
 import Swiper from "swiper";
 import 'swiper/css/swiper.css'
+import Loading from "../Loading/Loading";
 
 export default class Banner extends React.Component {
 
@@ -19,12 +20,15 @@ export default class Banner extends React.Component {
 
     constructor(props) {
         super(props);
-        /**
-         * 为数组添加Key
-         */
-        for (let i = 0; i < props.data.length; i++) {
-            props.data[i]['key'] = i;
+        this.state = {
+            data: this.props.data
         }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            data: nextProps.data
+        }, this.onWindowResize);
     }
 
     onWindowResize = () => {
@@ -96,54 +100,62 @@ export default class Banner extends React.Component {
         return (
             <div id="BannerPage" style={{background: '#f7f7f7', padding: '0'}}>
                 <Row type="flex" justify="space-around" align="middle">
-                    <Col span={24} style={{textAlign: "center", padding: '0 20px 0 20px'}}>
-                        <div className="swiper-container bannerSwiper" onMouseLeave={this.onMouseLeaveBannerAction}
-                             onMouseOver={this.onMouseOverBannerAction}>
-                            <div className="swiper-wrapper">
-                                {
-                                    this.props.data.map((item) => {
-                                        return (
-                                            <div key={item.key} className="swiper-slide">
-                                                <div className="banner-box" style={{
-                                                    backgroundImage: 'url(' + item.imgSrc + ')',
-                                                    backgroundPosition: 'center',
-                                                    backgroundRepeat: 'no repeat',
-                                                    backgroundSize: 'cover'
+                    {this.state.data === null ?
+                        <div style={{height: '100%'}}>
+                            <Loading/>
+                        </div> :
+                        <Col span={24} style={{textAlign: "center", padding: '0 20px 0 20px'}}>
+                            <div className="swiper-container bannerSwiper" onMouseLeave={this.onMouseLeaveBannerAction}
+                                 onMouseOver={this.onMouseOverBannerAction}>
+                                <div className="swiper-wrapper">
+                                    {
+                                        this.state.data.map((item) => {
+                                            return (
+                                                <div key={item.key} className="swiper-slide" onClick={() => {
+                                                    window.location.href = "/movie/" + item.id
                                                 }}>
-                                                    <div className="banner-info">
-                                                        <div className="banner-title">{item.title}</div>
-                                                        <div className="banner-description">{item.description}</div>
+                                                    <div className="banner-box" style={{
+                                                        backgroundImage: 'url(' + item.imgSrc + ')',
+                                                        backgroundPosition: 'center',
+                                                        backgroundRepeat: 'no repeat',
+                                                        backgroundSize: 'cover'
+                                                    }}>
+                                                        <div className="banner-info">
+                                                            <div className="banner-title">{item.title}</div>
+                                                            <div
+                                                                className="banner-description">{item.description}</div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        );
-                                    })
-                                }
+                                            );
+                                        })
+                                    }
+                                </div>
                             </div>
-                        </div>
-                        <div className="swiper-button-prev bannerSwiperPrevButton">
-                            <Button className="swiper-custom-button" shape="circle"
-                                    onMouseLeave={this.onMouseLeaveButtonAction}
-                                    onMouseOver={this.onMouseOverButtonAction}
-                                    style={{opacity: (this.state.isButtonHover) ? 1 : (this.state.isBannerHover ? 0.5 : 0)}}
-                                    onClick={() => {
-                                        this.swiper.slidePrev();
-                                    }}>
-                                <Icon type="left"/>
-                            </Button>
-                        </div>
-                        <div className="swiper-button-next bannerSwiperNextButton">
-                            <Button className="swiper-custom-button" shape="circle"
-                                    onMouseLeave={this.onMouseLeaveButtonAction}
-                                    onMouseOver={this.onMouseOverButtonAction}
-                                    style={{opacity: (this.state.isButtonHover) ? 1 : (this.state.isBannerHover ? 0.5 : 0)}}
-                                    onClick={() => {
-                                        this.swiper.slideNext();
-                                    }}>
-                                <Icon type="right"/>
-                            </Button>
-                        </div>
-                    </Col>
+                            <div className="swiper-button-prev bannerSwiperPrevButton">
+                                <Button className="swiper-custom-button" shape="circle"
+                                        onMouseLeave={this.onMouseLeaveButtonAction}
+                                        onMouseOver={this.onMouseOverButtonAction}
+                                        style={{opacity: (this.state.isButtonHover) ? 1 : (this.state.isBannerHover ? 0.5 : 0)}}
+                                        onClick={() => {
+                                            this.swiper.slidePrev();
+                                        }}>
+                                    <Icon type="left"/>
+                                </Button>
+                            </div>
+                            <div className="swiper-button-next bannerSwiperNextButton">
+                                <Button className="swiper-custom-button" shape="circle"
+                                        onMouseLeave={this.onMouseLeaveButtonAction}
+                                        onMouseOver={this.onMouseOverButtonAction}
+                                        style={{opacity: (this.state.isButtonHover) ? 1 : (this.state.isBannerHover ? 0.5 : 0)}}
+                                        onClick={() => {
+                                            this.swiper.slideNext();
+                                        }}>
+                                    <Icon type="right"/>
+                                </Button>
+                            </div>
+                        </Col>
+                    }
                 </Row>
             </div>
         );

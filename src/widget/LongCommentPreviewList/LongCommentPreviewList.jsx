@@ -4,6 +4,7 @@ import {Button, Col, Divider, List, Pagination, Row, Typography} from "antd";
 import * as PropTypes from "prop-types";
 import LongCommentPreviewCard from "../LongCommentPreviewCard/LongCommentPreviewCard";
 import Loading from "../Loading/Loading";
+import {Route} from "react-router";
 
 const {Title} = Typography;
 
@@ -13,15 +14,16 @@ export default class LongCommentPreviewList extends React.Component {
         isFirstNode: PropTypes.bool,
         withTitle: PropTypes.bool,
         withShowMoreButton: PropTypes.bool,
-        getDataFunction: PropTypes.func,
+        ShowMoreHref: PropTypes.string,
         // 选填
         withAuthorPicShow: PropTypes.bool,
         withMoviePicShow: PropTypes.bool,
         withLikeOrDisLike: PropTypes.bool,
+        withPagination: PropTypes.bool,
         title: PropTypes.string,
         data: PropTypes.array,
-        page: PropTypes.number,
-        total: PropTypes.number
+        total: PropTypes.number,
+        pageSize: PropTypes.number
     };
 
     static defaultProps = {
@@ -31,32 +33,54 @@ export default class LongCommentPreviewList extends React.Component {
         withAuthorPicShow: false,
         withMoviePicShow: false,
         withLikeOrDisLike: false,
+        withPagination: true
     };
 
     constructor(props) {
         super(props);
         this.state = {
-            total: this.props.total,
             data: this.props.data,
-            currentPage: this.props.page,
-            pageSize: 5,
+            total: this.props.total,
+            pageSize: this.props.pageSize,
+            currentPage: 1,
+            dataArray: [],
         };
     }
 
-    updateData() {
+    getPageSize = () => {
+        return this.props.pageSize;
+    };
+
+    getData() {
+        if (this.state.data === null) {
+            return;
+        }
         let page = this.state.currentPage;
         let pageSize = this.state.pageSize;
-        this.props.getDataFunction(page, pageSize);
+        if (page * pageSize <= this.state.total) {
+            this.setState({
+                dataArray: this.props.data.slice((page - 1) * pageSize, (page * pageSize))
+            })
+        } else {
+            this.setState({
+                dataArray: this.props.data.slice(-pageSize)
+            })
+        }
     }
 
-    // 监测屏幕变化
     componentDidMount() {
-        this.updateData();
+        this.setState({pageSize: this.getPageSize()}, () => this.getData());
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevState.total !== this.props.total) {
+            this.setState({pageSize: this.getPageSize()}, () => this.getData());
+        }
+
     }
 
     componentWillReceiveProps(nextProps) {
         this.setState({
-            page: nextProps.page,
             data: nextProps.data,
             total: nextProps.total
         });
@@ -77,9 +101,15 @@ export default class LongCommentPreviewList extends React.Component {
                         </Col>
                         {withShowMoreButton ?
                             <Col>
-                                <Button type="link">
-                                    查看更多 >
-                                </Button>
+                                <Route render={({match, history}) => {
+                                    return (
+                                        <Button type="link" onClick={() => {
+                                            history.push(this.props.ShowMoreHref)
+                                        }}>
+                                            查看更多 >
+                                        </Button>
+                                    )
+                                }}/>
                             </Col> : null}
                     </Row> : null}
                 {this.state.data === null ?
@@ -88,7 +118,7 @@ export default class LongCommentPreviewList extends React.Component {
                     </div> :
                     <div>
                         <List itemLayout="horizontal"
-                              dataSource={this.state.data}
+                              dataSource={this.state.dataArray}
                               renderItem={item => (
                                   <List.Item key={item.key} style={{padding: '5px'}}>
                                       <LongCommentPreviewCard
@@ -112,21 +142,18 @@ export default class LongCommentPreviewList extends React.Component {
                                   </List.Item>
                               )}
                         />
-                        <Row type="flex" justify="end">
-                            <Col>
-                                <Pagination size="small"
-                                            showQuickJumper
-                                            showTotal={(total => {
-                                                return `共 ${total} 条长评`
-                                            })}
-                                            defaultCurrent={1}
-                                            pageSize={this.state.pageSize}
-                                            total={this.state.total}
-                                            onChange={(page, pageSize) => {
-                                                this.setState({currentPage: page}, () => this.updateData())
-                                            }}/>
-                            </Col>
-                        </Row>
+                        {this.props.withPagination ?
+                            <Row type="flex" justify="end">
+                                <Col>
+                                    <Pagination simple
+                                                defaultCurrent={1}
+                                                pageSize={this.state.pageSize}
+                                                total={this.state.total}
+                                                onChange={(page, pageSize) => {
+                                                    this.setState({currentPage: page}, () => this.getData())
+                                                }}/>
+                                </Col>
+                            </Row> : null}
                     </div>}
                 {!isLastNode ? <Divider/> : <div style={{margin: '20px'}}/>}
             </div>

@@ -1,8 +1,9 @@
 import React from "react";
 import './LongCommentList.css'
-import {Col, Divider, List, Pagination, Row, Typography} from "antd";
+import {Button, Col, Divider, List, Pagination, Row, Typography} from "antd";
 import * as PropTypes from "prop-types";
 import LongCommentPreviewCard from "../LongCommentPreviewCard/LongCommentPreviewCard";
+import Loading from "../Loading/Loading";
 
 const {Title} = Typography;
 
@@ -11,16 +12,22 @@ export default class LongCommentList extends React.Component {
         isLastNode: PropTypes.bool,
         isFirstNode: PropTypes.bool,
         withTitle: PropTypes.bool,
+        withShowMoreButton: PropTypes.bool,
+        getDataFunction: PropTypes.func,
         // 选填
         withAuthorPicShow: PropTypes.bool,
         withMoviePicShow: PropTypes.bool,
         withLikeOrDisLike: PropTypes.bool,
         title: PropTypes.string,
+        data: PropTypes.array,
+        page: PropTypes.number,
+        total: PropTypes.number
     };
 
     static defaultProps = {
         isLastNode: false,
         isFirstNode: false,
+        withShowMoreButton: false,
         withAuthorPicShow: false,
         withMoviePicShow: false,
         withLikeOrDisLike: false,
@@ -29,29 +36,30 @@ export default class LongCommentList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            windowWidth: window.innerWidth,
-            total: this.props.data.length,
-            pageSize: 0,
-            currentPage: 1,
-            dataArray: [],
-            selectedTags: [],
+            total: this.props.total,
+            data: this.props.data,
+            currentPage: this.props.page,
+            pageSize: 5,
         };
     }
 
-    getData() {
+    updateData() {
         let page = this.state.currentPage;
         let pageSize = this.state.pageSize;
-        if (page * pageSize <= this.state.total) {
-            this.setState({
-                dataArray: this.props.data.slice((page - 1) * pageSize, (page * pageSize))
-            })
-        } else {
-            this.setState({
-                dataArray: this.props.data.slice(-pageSize)
-            })
-        }
+        this.props.getDataFunction(page, pageSize);
     }
 
+    componentDidMount() {
+        this.updateData();
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            page: nextProps.page,
+            data: nextProps.data,
+            total: nextProps.total
+        });
+    }
 
     render() {
         const {isFirstNode, isLastNode, withTitle, withShowMoreButton, title} = this.props;
@@ -66,49 +74,59 @@ export default class LongCommentList extends React.Component {
                         <Col>
                             <Title level={4}>{title}</Title>
                         </Col>
+                        {withShowMoreButton ?
+                            <Col>
+                                <Button type="link">
+                                    查看更多 >
+                                </Button>
+                            </Col> : null}
                     </Row> : null}
-                <List itemLayout="horizontal"
-                      dataSource={this.state.dataArray}
-                      renderItem={item => (
-                          <List.Item key={item.key} style={{padding: '5px'}}>
-                              <LongCommentPreviewCard
-                                  authorId={item.authorId}
-                                  movieId={item.movieId}
-                                  commentId={item.commentId}
-                                  authorName={item.authorName}
-                                  movieName={item.movieName}
-                                  movieScore={item.movieScore}
-                                  editTime={item.editTime}
-                                  commentTitle={item.commentTitle}
-                                  commentContent={item.commentContent}
-                                  withAuthorPicShow={this.props.withAuthorPicShow}
-                                  authorPic={item.authorPic}
-                                  withMoviePicShow={this.props.withMoviePicShow}
-                                  moviePic={item.moviePic}
-                                  withLikeOrDisLike={this.props.withLikeOrDisLike}
-                                  likeNumber={item.likeNumber}
-                                  dislikeNumber={item.dislikeNumber}
-                                  replyNumber={item.replyNumber}
-                              />
-                          </List.Item>
-                      )}
-                />
-                <Row type="flex" justify="end">
-                    <Col>
-                        <Pagination
-                            showSizeChanger
-                            onChange={(page, pageSize) => {
-                                this.setState({currentPage: page, pageSize: pageSize})
-                            }}
-                            onShowSizeChange={(current, pageSize) => {
-                                this.setState({pageSize: pageSize})
-                            }}
-                            pageSizeOptions={['5', '10', '20', '30', '40']}
-                            defaultCurrent={1}
-                            total={this.state.total}
+                {this.state.data === null ?
+                    <div style={{height: '100%'}}>
+                        <Loading/>
+                    </div> :
+                    <div>
+                        <List itemLayout="horizontal"
+                              dataSource={this.state.data}
+                              renderItem={item => (
+                                  <List.Item key={item.key} style={{padding: '5px'}}>
+                                      <LongCommentPreviewCard
+                                          movieId={item.movieId}
+                                          commentId={item.commentId}
+                                          authorName={item.authorName}
+                                          movieName={item.movieName}
+                                          movieScore={item.movieScore}
+                                          editTime={item.editTime}
+                                          commentTitle={item.commentTitle}
+                                          commentContent={item.commentContent}
+                                          withAuthorPicShow={this.props.withAuthorPicShow}
+                                          authorPic={item.authorPic}
+                                          withMoviePicShow={this.props.withMoviePicShow}
+                                          moviePic={item.moviePic}
+                                          withLikeOrDisLike={this.props.withLikeOrDisLike}
+                                          likeNumber={item.likeNumber}
+                                          dislikeNumber={item.dislikeNumber}
+                                          likeType={item.likeType}
+                                      />
+                                  </List.Item>
+                              )}
                         />
-                    </Col>
-                </Row>
+                        <Row type="flex" justify="end">
+                            <Col>
+                                <Pagination size="small"
+                                            showQuickJumper
+                                            showTotal={(total => {
+                                                return `共 ${total} 条长评`
+                                            })}
+                                            defaultCurrent={1}
+                                            pageSize={this.state.pageSize}
+                                            total={this.state.total}
+                                            onChange={(page, pageSize) => {
+                                                this.setState({currentPage: page}, () => this.updateData())
+                                            }}/>
+                            </Col>
+                        </Row>
+                    </div>}
                 {!isLastNode ? <Divider/> : <div style={{margin: '20px'}}/>}
             </div>
         );
