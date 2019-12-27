@@ -1,0 +1,79 @@
+/* xs */
+@media (max-width: 576px) {
+    .long_comment_card .ant-rate-star {
+        font-size: 14px;
+    }
+
+    .long_comment_card .ant-rate-star:not(:last-child) {
+        margin-right: 4px;
+    }
+    .movie-pic {
+        height: 150px;
+        width: auto;
+    }
+}
+
+/* sm */
+@media (min-width: 576px) {
+    .long_comment_card .ant-rate-star {
+        font-size: 14px;
+    }
+
+    .long_comment_card .ant-rate-star:not(:last-child) {
+        margin-right: 4px;
+    }
+
+    .movie-pic {
+        height: 150px;
+        width: auto;
+    }
+}
+
+/* md */
+@media (min-width: 768px) {
+    .long_comment_card .ant-card {
+        font-size: 14px;
+    }
+
+    .long_comment_card .ant-rate-star:not(:last-child) {
+        margin-right: 4px;
+    }
+
+    .long_comment_card .ant-rate {
+        font-size: 14px;
+    }
+
+    .movie-pic {
+        height: 150px;
+        width: auto;
+    }
+}
+
+/* lg */
+@media (min-width: 992px) {
+    .movie-pic {
+        height: 150px;
+        width: auto;
+    }
+}
+
+/* xl */
+@media (min-width: 1200px) {
+    .movie-pic {
+        height: 150px;
+        width: auto;
+    }
+}
+
+/* xxl */
+@media (min-width: 1600px) {
+    .movie-pic {
+        height: 150px;
+        width: auto;
+    }
+}
+
+.movie-pic {
+    /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.10);*/
+    position: relative;
+}

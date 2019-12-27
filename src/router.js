@@ -7,6 +7,7 @@ import Home from "./pages/Home/Home";
 import TheatricalLine from "./pages/TheatricalLine/TheatricalLine";
 import MoviesGallery from "./pages/MoviesGallery/MoviesGallery";
 import HottestComments from "./pages/HottestComments/HottestComments";
+import LongCommentDetail from "./pages/LongCommentDetail/LongCommentDetail";
 
 export const routes = [
     {path: '/home', component: Home},
@@ -16,6 +17,7 @@ export const routes = [
     {path: '/movie/:id', component: MoviesDetail},
     {path: '/staff/:id', component: StaffsDetail},
     {path: '/award/:id', component: AwardsDetail},
+    {path: '/comments/:id', component: LongCommentDetail},
     {path: '/discussesDetail', component: DiscussesDetail},
     {path: '/usersDetail', component: UsersDetail},
 ];

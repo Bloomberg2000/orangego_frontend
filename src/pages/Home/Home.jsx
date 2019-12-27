@@ -51,7 +51,6 @@ export default class Home extends React.Component {
     getRecentMoviesData() {
         axios.get("/api/movie/latest").then(
             res => {
-                console.log(res);
                 let movieList = [];
                 let i = 0;
                 for (let movie of res.data.movies) {
@@ -109,7 +108,7 @@ export default class Home extends React.Component {
                         movieScore: comment.comments.score * 2,
                         editTime: comment.comments.createtimedate,
                         commentTitle: comment.comments.longcommentstitle,
-                        commentContent: comment.comments.longcommentscontent,
+                        commentContent: comment.comments.plaintext,
                         authorPic: comment.comments.useravatar,
                         moviePic: comment.comments.moviecover,
                         likeNumber: comment.longcommentslikenum,

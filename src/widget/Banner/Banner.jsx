@@ -101,7 +101,7 @@ export default class Banner extends React.Component {
             <div id="BannerPage" style={{background: '#f7f7f7', padding: '0'}}>
                 <Row type="flex" justify="space-around" align="middle">
                     {this.state.data === null ?
-                        <div style={{height: '100%'}}>
+                        <div style={{height: '100%', padding: '60px 0'}}>
                             <Loading/>
                         </div> :
                         <Col span={24} style={{textAlign: "center", padding: '0 20px 0 20px'}}>

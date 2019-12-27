@@ -77,6 +77,9 @@ export default class LongCommentPreviewCard extends React.Component {
                                 : null}
                             <Row>
                                 <Button size={"large"} type="link"
+                                        onClick={()=>{
+                                            window.location.href='/comments/'+this.props.commentId
+                                        }}
                                         style={{
                                             padding: 0,
                                             margin: (this.props.withAuthorPicShow) ? '10px 0 10px 0' : '0',

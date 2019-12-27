@@ -16,6 +16,10 @@
     .movie-preview-card .ant-rate {
         font-size: 11px;
     }
+
+    .movie-preview-card .ant-card-cover {
+        height: 300px;
+    }
 }
 
 /* sm */
@@ -36,6 +40,10 @@
     .movie-preview-card .ant-rate {
         font-size: 10px;
     }
+
+    .movie-preview-card .ant-card-cover {
+        height: 200px;
+    }
 }
 
 /* md */
@@ -54,6 +62,10 @@
 
     .movie-preview-card .ant-rate {
         font-size: 16px;
+    }
+
+    .movie-preview-card .ant-card-cover {
+        height: 200px;
     }
 }
 
@@ -75,6 +87,10 @@
     .movie-preview-card .ant-rate {
         font-size: 12px;
     }
+
+    .movie-preview-card .ant-card-cover {
+        height: 160px;
+    }
 }
 
 /* xl */
@@ -95,8 +111,17 @@
     .movie-preview-card .ant-rate {
         font-size: 12px;
     }
+
+    .movie-preview-card .ant-card-cover {
+        height: 220px;
+    }
 }
 
+@media (min-width: 1400px) {
+    .movie-preview-card .ant-card-cover {
+        height: 270px;
+    }
+}
 /* xxl */
 @media (min-width: 1600px) {
     .movie-preview-card .ant-card-meta-title {
@@ -111,9 +136,17 @@
     .movie-preview-card .ant-rate {
         font-size: 15px;
     }
+
+    .movie-preview-card .ant-card-cover {
+        height: 230px;
+    }
 }
 
 .movie-preview-card .ant-card-body {
     padding: 17px;
     zoom: 1;
+}
+
+.movie-preview-card .ant-card-cover {
+    overflow: hidden;
 }
