@@ -8,7 +8,6 @@ const {Text, Paragraph} = Typography;
 export default class LongCommentPreviewCard extends React.Component {
     static propTypes = {
         // 基本跳转信息
-        authorId: PropTypes.number,
         movieId: PropTypes.number,
         commentId: PropTypes.number,
         // 基本信息
@@ -27,7 +26,7 @@ export default class LongCommentPreviewCard extends React.Component {
         withLikeOrDisLike: PropTypes.bool,
         likeNumber: PropTypes.number,
         dislikeNumber: PropTypes.number,
-        replyNumber: PropTypes.number,
+        likeType: PropTypes.number
     };
 
 
@@ -65,12 +64,13 @@ export default class LongCommentPreviewCard extends React.Component {
                     <Row type="flex" justify="space-between">
                         <Col xs={this.props.withMoviePicShow ? 19 : 24}
                              md={this.props.withMoviePicShow ? 21 : 24}
-                            xl={this.props.withMoviePicShow ? 22 : 24}>
+                             xl={this.props.withMoviePicShow ? 22 : 24}>
                             {this.props.withAuthorPicShow ?
-                                <Row type="flex" justify="start" align="middle"  style={{padding: '5px 0'}}>
+                                <Row type="flex" justify="start" align="middle" style={{padding: '5px 0'}}>
                                     <Avatar src={this.props.authorPic} style={{margin: '0 10px 0 0'}}/>
-                                    <Button type="link" style={{padding: '0'}}>{this.props.authorName}</Button>
-                                    <Rate disabled allowHalf defaultValue={Math.round(this.props.movieScore) / 2}/>
+                                    <Text type="secondary" style={{padding: '3px'}}>{this.props.authorName}</Text>
+                                    <Rate disabled allowHalf style={{marginBottom: '6px'}}
+                                          defaultValue={Math.round(this.props.movieScore) / 2}/>
                                     <Text type="secondary" style={{marginLeft: '5px'}}>{this.props.editTime}</Text>
                                 </Row>
                                 : null}
@@ -86,10 +86,10 @@ export default class LongCommentPreviewCard extends React.Component {
                             </Row>
                             {!this.props.withAuthorPicShow ?
                                 <Row type="flex" justify="start" align="middle" style={{padding: '10px 0'}}>
-                                    <a>{this.props.authorName}</a>
+                                    <Text type="secondary">{this.props.authorName}</Text>
                                     <Text type="secondary" style={{margin: '0 10px'}}>评论</Text>
                                     <a>{this.props.movieName}</a>
-                                    <Rate disabled allowHalf style={{marginLeft: '10px'}}
+                                    <Rate disabled allowHalf style={{marginLeft: '10px', marginBottom: '6px'}}
                                           defaultValue={Math.round(this.props.movieScore) / 2}/>
                                 </Row>
                                 : null}
@@ -120,9 +120,6 @@ export default class LongCommentPreviewCard extends React.Component {
                             </Tooltip>
                             <span style={{paddingLeft: 6, cursor: 'auto'}}>{dislikes}</span>
                           </span>
-                                    <span key="comment-basic-reply-to" style={{paddingLeft: '10px'}}>
-                            <Button type="link">回应 {this.props.replyNumber}</Button>
-                        </span>
                                 </Row> : null}
                         </Col>
                         {this.props.withMoviePicShow ?

@@ -1,6 +1,6 @@
 import React from "react";
 import './ShortCommentPreviewCard.css'
-import {Avatar, Button, Card, Col, Icon, Rate, Row, Tooltip, Typography} from "antd";
+import {Avatar, Card, Col, Icon, Rate, Row, Tooltip, Typography} from "antd";
 import * as PropTypes from "prop-types";
 
 const {Text, Paragraph} = Typography;
@@ -8,7 +8,6 @@ const {Text, Paragraph} = Typography;
 export default class ShortCommentPreviewCard extends React.Component {
     static propTypes = {
         // 基本跳转信息
-        authorId: PropTypes.number,
         movieId: PropTypes.number,
         commentId: PropTypes.number,
         // 基本信息
@@ -24,6 +23,7 @@ export default class ShortCommentPreviewCard extends React.Component {
         authorPic: PropTypes.string,
         withLike: PropTypes.bool,
         likeNumber: PropTypes.number,
+        isLike: PropTypes.bool
     };
 
 
@@ -54,10 +54,10 @@ export default class ShortCommentPreviewCard extends React.Component {
                                 {this.props.withAuthorPicShow ?
                                     <Avatar src={this.props.authorPic} style={{margin: '0 10px 0 0'}}/>
                                     : null}
-                                <Button type="link" style={{padding: '0'}}>{this.props.authorName}</Button>
+                                <Text type="secondary" style={{padding: '0'}}>{this.props.authorName}</Text>
                                 {this.props.commentType === 0 ?
                                     <div>
-                                        <Text type="secondary" style={{margin: '0 5px'}}>看过</Text>
+                                        <Text style={{margin: '0 5px'}}>看过</Text>
                                         <Rate disabled allowHalf defaultValue={Math.round(this.props.movieScore) / 2}/>
                                     </div> :
                                     <div><Text type="secondary" style={{margin: '0 5px'}}>想看</Text></div>}

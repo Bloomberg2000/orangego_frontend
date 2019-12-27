@@ -1,9 +1,7 @@
 import React from "react";
 import './DiscussesList.css'
-import {Col, Divider, Row, Table, Tag, Typography} from "antd";
+import {Col, Divider, Row, Table, Typography} from "antd";
 import * as PropTypes from "prop-types";
-
-const {CheckableTag} = Tag;
 
 const {Title} = Typography;
 const columns = [
@@ -15,21 +13,12 @@ const columns = [
     {
         title: '作者',
         dataIndex: 'authorName',
-        render: text => <span>来自 <a>{text}</a></span>,
-
-    },
-    {
-        title: '回应',
-        dataIndex: 'replyNum',
-        render: text => <span>{text} 回应</span>,
-        align:'right',
-        width:'90px'
     },
     {
         title: '更新时间',
         dataIndex: 'updateTime',
-        align:'right',
-        width:'180px'
+        align: 'right',
+        width: '180px'
     }
 ];
 
@@ -39,7 +28,11 @@ export default class DiscussesList extends React.Component {
         isFirstNode: PropTypes.bool,
         withTitle: PropTypes.bool,
         title: PropTypes.string,
+
+        getDataFunction: PropTypes.func,
         data: PropTypes.array,
+        page: PropTypes.number,
+        total: PropTypes.number
     };
 
     static defaultProps = {
@@ -49,19 +42,33 @@ export default class DiscussesList extends React.Component {
 
     constructor(props) {
         super(props);
-        /**
-         * 为数组添加Key
-         */
-        for (let i = 0; i < props.data.length; i++) {
-            props.data[i]['key'] = i;
-        }
         this.state = {
-            windowWidth: window.innerWidth,
-            total: this.props.data.length,
-            pageSize: 0,
-            currentPage: 1,
+            total: this.props.total,
+            data: this.props.data,
+            currentPage: this.props.page,
+            pageSize: 5,
         };
     }
+
+    updateData() {
+        let page = this.state.currentPage;
+        let pageSize = this.state.pageSize;
+        this.props.getDataFunction(page, pageSize);
+    }
+
+    // 监测屏幕变化
+    componentDidMount() {
+        this.updateData();
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            page: nextProps.page,
+            data: nextProps.data,
+            total: nextProps.total
+        });
+    }
+
 
     render() {
         const {isFirstNode, isLastNode, withTitle, title, data} = this.props;
@@ -81,9 +88,15 @@ export default class DiscussesList extends React.Component {
                        columns={columns}
                        dataSource={data}
                        pagination={{
+                           size: 'small',
                            showQuickJumper: true,
-                           showSizeChanger: true,
-                           // showTotal: () => `共${totals}条`
+                           showTotal: (totals) => `共 ${totals} 个讨论`,
+                           defaultCurrent: 1,
+                           pageSize: this.state.pageSize,
+                           total: this.state.total,
+                           onChange: (page, pageSize) => {
+                               this.setState({currentPage: page}, () => this.updateData())
+                           }
                        }}/>
                 {!isLastNode ? <Divider/> : <div style={{margin: '20px'}}/>}
             </div>

@@ -30,12 +30,6 @@ export default class StaffList extends React.Component {
 
     constructor(props) {
         super(props);
-        /**
-         * 为数组添加Key
-         */
-        for (let i = 0; i < props.data.length; i++) {
-            props.data[i]['key'] = i;
-        }
     }
 
     onWindowResize = () => {
@@ -110,7 +104,7 @@ export default class StaffList extends React.Component {
                                             <div key={item.key} className="swiper-slide" style={{width: '200px'}}>
                                                 <Route render={({match, history}) => {
                                                     return (
-                                                        <div className={"staff-card"} key={"1"}
+                                                        <div className={"staff-card"}
                                                              onClick={() => {
                                                                  history.push('/staff/' + item.staffID);
                                                              }}>
