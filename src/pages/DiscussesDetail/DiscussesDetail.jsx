@@ -3,16 +3,16 @@ import TitleBar from "../../widget/TitleBar/TitleBar";
 import Loading from "../../widget/Loading/Loading";
 import axios from "axios";
 import Error from "../../widget/Error/Error";
-import LongCommentCard from "../../widget/LongCommentCard/LongCommentCard";
-import {Comment, List} from "antd";
-import './LongCommentDetail.css'
+import {Avatar, Card, Col, Comment, List, Row, Typography} from "antd";
+import './DiscussesDetail.css'
 
-export default class LongCommentDetail extends React.Component {
+const {Title, Text} = Typography;
+export default class DiscussesDetail extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            longCommentId: props.match.params.id,
-            longCommentData: {},
+            discussId: props.match.params.id,
+            discussData: {},
             hasError: false,
         }
     }
@@ -20,15 +20,15 @@ export default class LongCommentDetail extends React.Component {
     componentDidMount() {
         const that = this;
         window.addEventListener('resize', this.onWindowResize);
-        axios.get("/api/longComments/" + this.state.longCommentId).then(
+        axios.get("/api/discusses/" + this.state.discussId).then(
             res => {
-                if (!res.data.hasOwnProperty('comments')) {
+                if (!res.data.hasOwnProperty('replies')) {
                     that.setState({
                         hasError: true
                     });
                 }
                 that.setState({
-                    longCommentData: res.data,
+                    discussData: res.data,
                 });
             }
         ).catch(
@@ -44,7 +44,7 @@ export default class LongCommentDetail extends React.Component {
                 <Error content={"出错了，未找到相关评论。"}/>
             )
         }
-        if (!this.state.longCommentData.hasOwnProperty('comments')) {
+        if (!this.state.discussData.hasOwnProperty('replies')) {
             return (
                 <div style={{height: '100%'}}>
                     <TitleBar key="a" title={"影评"}/>
@@ -52,10 +52,9 @@ export default class LongCommentDetail extends React.Component {
                 </div>
             )
         }
-        const comment = this.state.longCommentData.comments;
-        const replyList = this.state.longCommentData.replies;
-        const replyNum = this.state.longCommentData.replyNum;
-        const likeType = this.state.longCommentData.likeType;
+        const discussData = this.state.discussData;
+        const replyNum = this.state.discussData.replyNum;
+        const replyList = this.state.discussData.replies;
         for (let i in replyList) {
             let content;
             if (replyList[i].hasOwnProperty("parent")) {
@@ -73,27 +72,28 @@ export default class LongCommentDetail extends React.Component {
             replyList[i]['content'] = content;
         }
         return (<div id="home">
-            <TitleBar key="a" title={"影评"}/>
+            <TitleBar key="a" title={"讨论区"}/>
             {this.state.data === null ?
                 <div style={{height: '100%'}}>
                     <Loading/>
                 </div> :
                 <div>
-                    <LongCommentCard
-                        movieId={comment.movieid}
-                        commentId={comment.longcommentsid}
-                        authorName={comment.username}
-                        movieName={comment.moviename}
-                        movieScore={comment.score * 2}
-                        editTime={comment.createtimedate}
-                        commentTitle={comment.longcommentstitle}
-                        commentContent={comment.longcommentscontent}
-                        authorPic={comment.useravatar}
-                        moviePic={comment.moviecover}
-                        likeNumber={comment.longcommentslikenum}
-                        dislikeNumber={comment.longcommentsunlikenum}
-                        likeType={likeType}
-                    />
+                    <Card bordered={false} style={{width: "100%"}}>
+                        <Row type="flex" justify="space-between">
+                            <Col>
+                                <Row>
+                                    <Title level={3}>{discussData.discussesContent}</Title>
+                                </Row>
+                            </Col>
+                        </Row>
+                        <Row type="flex" justify="start" align="middle" style={{padding: '5px 0'}}>
+                            <Avatar src={discussData.userAvatar} style={{margin: '0 10px 0 0'}}/>
+                            <Text type="secondary" style={{padding: '3px'}}>{discussData.userName}</Text>
+                            <Text type="secondary" style={{margin: '0 5px'}}>发起讨论</Text>
+                            <a href={"/movie/" + discussData.movieId}>{discussData.movieName}</a>
+                            <Text type="secondary" style={{marginLeft: '5px'}}>{discussData.discussesCreateTime}</Text>
+                        </Row>
+                    </Card>
                     <div style={{
                         background: '#fff',
                         padding: '10px 31px',

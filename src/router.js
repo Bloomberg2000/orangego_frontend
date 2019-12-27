@@ -1,5 +1,5 @@
 import AwardsDetail from "./pages/AwardsDetail/AwardsDetail";
-import DiscussesDetail from "./pages/DiscussesDetail";
+import DiscussesDetail from "./pages/DiscussesDetail/DiscussesDetail.jsx";
 import MoviesDetail from "./pages/MoviesDetail/MoviesDetail";
 import StaffsDetail from "./pages/StaffsDetail/StaffsDetail";
 import UsersDetail from "./pages/UsersDetail";
@@ -18,6 +18,6 @@ export const routes = [
     {path: '/staff/:id', component: StaffsDetail},
     {path: '/award/:id', component: AwardsDetail},
     {path: '/comments/:id', component: LongCommentDetail},
-    {path: '/discussesDetail', component: DiscussesDetail},
+    {path: '/discuss/:id', component: DiscussesDetail},
     {path: '/usersDetail', component: UsersDetail},
 ];

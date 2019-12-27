@@ -45,18 +45,18 @@
     line-height: 60px;
 }
 
-.ant-input-group {
+.searchBar .ant-input-group {
     line-height: 64px;
 }
 
-.ant-input {
+.searchBar .ant-input {
     height: 64px;
     border: 0;
     border-radius: 0;
     box-shadow: 0 0 0 #fff;
 }
 
-.ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled) {
+.searchBar .ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled) {
     border: 0;
     box-shadow: 0 0 0 #fff;
 }

@@ -5,3 +5,11 @@
 .login-form-button {
     width: 100%;
 }
+
+.login-form .ant-input-group {
+    line-height: 50px;
+}
+
+.login-form .ant-input {
+    height: 50px;
+}

@@ -16,7 +16,7 @@ export const OrangoGoIcon = Icon.createFromIconfontCN({
 });
 
 // 搜索栏
-const SearchBar = (<div><Search placeholder="搜索电影/影人" style={{background: '#fff'}}/></div>);
+const SearchBar = (<div className={"searchBar"}><Search placeholder="搜索电影/影人" style={{background: '#fff'}}/></div>);
 
 class App extends React.Component {
     state = {

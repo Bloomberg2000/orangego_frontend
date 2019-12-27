@@ -1,5 +1,5 @@
 import React from "react";
-import {Avatar, Badge, Button, Modal, Tabs, Typography} from "antd";
+import {Avatar, Badge, Modal, Tabs, Typography} from "antd";
 import Login from "../Login/Login";
 
 
@@ -43,21 +43,13 @@ export default class LogInOrSignInModal extends React.Component {
                 </Badge>
                 <Modal
                     visible={visible}
-                    // title="Title"
                     onOk={this.handleOk}
                     onCancel={this.handleCancel}
-                    footer={[
-                        <Button key="back" onClick={this.handleCancel}>
-                            返回
-                        </Button>,
-                        <Button key="submit" type="primary" loading={loading} onClick={this.handleOk}>
-                            提交
-                        </Button>,
-                    ]}
+                    footer={null}
                 >
                     <Tabs defaultActiveKey="1" onChange={this.callback}>
                         <TabPane tab="登录" key="1">
-                            <Login></Login>
+                            <Login/>
                         </TabPane>
                         <TabPane tab="注册" key="2">
                             Content of Tab Pane 2

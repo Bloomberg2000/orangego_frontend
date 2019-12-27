@@ -5,8 +5,20 @@ import QueueAnim from 'rc-queue-anim';
 import PropTypes from 'prop-types';
 import TitleBar from "../../widget/TitleBar/TitleBar";
 import ColorThief from "../../utils/ColorThief";
-import {Button, Card, Col, Descriptions, Divider, Icon, Popover, Progress, Rate, Row, Typography} from 'antd';
-import LongCommentPreviewList from "../../widget/LongCommentPreviewList/LongCommentPreviewList";
+import {
+    Breadcrumb,
+    Button,
+    Card,
+    Col,
+    Descriptions,
+    Divider,
+    Icon,
+    Popover,
+    Progress,
+    Rate,
+    Row,
+    Typography
+} from 'antd';
 import ShortCommentList from "../../widget/ShortCommentList/ShortCommentList";
 import DiscussesList from "../../widget/DiscussesList/DiscussesList";
 import StaffList from "../../widget/StaffList/StaffList";
@@ -253,7 +265,7 @@ export default class MoviesDetail extends React.Component {
             scoreData.star3 * 6 +
             scoreData.star2 * 4 +
             scoreData.star1 * 2).toFixed(1);
-
+        const awardsData = this.state.movieData.awards;
         return (
             <div className={"movies-details"}>
                 <TitleBar key="a" title={"影片"}/>
@@ -490,19 +502,40 @@ export default class MoviesDetail extends React.Component {
                     </Paragraph>
                     <Divider/>
                 </div>
-                <StaffList key="d" withTitle={true} title={name + " 的演职人员"} data={staffList}/>
-                <ShortCommentList key="e" withTitle={true} title={name + " 的短评"}
+                {awardsData.length > 0 ?
+                    <div key="d" style={{
+                        background: '#fff',
+                        padding: '0px 20px 1px 20px'
+                    }}>
+                        <Row type="flex" justify="space-between" align="middle">
+                            <Col>
+                                <Title level={4}>{name + " 的获奖记录"}</Title>
+                            </Col>
+                        </Row>
+                        <Breadcrumb className={"bread-crumb"}>
+                            {awardsData.map((data) => {
+                                return (
+                                    <Breadcrumb.Item key={data.awardid} href={"/discuss/" + data.awardid}>
+                                        {data.awardname}
+                                    </Breadcrumb.Item>
+                                )
+                            })}
+                        </Breadcrumb>
+                        <Divider/>
+                    </div> : null}
+                <StaffList key="e" withTitle={true} title={name + " 的演职人员"} data={staffList}/>
+                <ShortCommentList key="f" withTitle={true} title={name + " 的短评"}
                                   data={this.state.shortCommentList} total={this.state.shortCommentTotal}
                                   page={this.state.shortCommentPage}
                                   withLike={true} getDataFunction={this.getShortCommentData.bind(this)}/>
 
-                <LongCommentList key="f" withTitle={true} title={name + " 的长评"}
-                                        data={this.state.longCommentList} total={this.state.longCommentTotal}
-                                        page={this.state.longCommentPage}
-                                        getDataFunction={this.getLongCommentData.bind(this)}
-                                        withAuthorPicShow={true} withLikeOrDisLike={true}/>
+                <LongCommentList key="g" withTitle={true} title={name + " 的长评"}
+                                 data={this.state.longCommentList} total={this.state.longCommentTotal}
+                                 page={this.state.longCommentPage}
+                                 getDataFunction={this.getLongCommentData.bind(this)}
+                                 withAuthorPicShow={true} withLikeOrDisLike={true}/>
 
-                <DiscussesList key="g" withTitle={true} title={name + " 的讨论区"}
+                <DiscussesList key="h" withTitle={true} title={name + " 的讨论区"}
                                data={this.state.discussList} total={this.state.discussTotal}
                                page={this.state.discussTotal}
                                getDataFunction={this.getDiscussData.bind(this)}

@@ -36,7 +36,6 @@ export default class MoviePreviewCard extends React.Component {
 
     render() {
         const {id, name, score, imgSrc} = this.state;
-        console.log(score);
         return (
             <Route render={({match, history}) => {
                 return (

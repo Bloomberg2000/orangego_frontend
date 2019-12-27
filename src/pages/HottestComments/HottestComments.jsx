@@ -34,7 +34,7 @@ export default class HottestComments extends React.Component {
                         movieScore: comment.comments.score * 2,
                         editTime: comment.comments.createtimedate,
                         commentTitle: comment.comments.longcommentstitle,
-                        commentContent: comment.comments.longcommentscontent,
+                        commentContent: comment.comments.plaintext,
                         authorPic: comment.comments.useravatar,
                         moviePic: comment.comments.moviecover,
                         likeNumber: comment.longcommentslikenum,

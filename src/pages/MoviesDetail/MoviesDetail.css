@@ -60,7 +60,7 @@
 
     .mobile-score-board h1.ant-typography, .ant-typography h1 {
         font-size: 40px;
-        margin: 0 ;
+        margin: 0;
     }
 
     .mobile-score-board .score-preview .ant-rate {
@@ -514,3 +514,7 @@
     background: #ffffff;
 }
 
+
+.bread-crumb .ant-breadcrumb-link {
+    color: #fac200 !important;
+}

@@ -1,0 +1,17 @@
+.reply-info blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+
+.reply-info p, blockquote, ul, ol, dl, table {
+    margin: 0.8em 0;
+}
+
+.reply-info blockquote {
+    margin: 1rem 0px;
+}
+
+.reply-info *, ::after, ::before {
+    box-sizing: border-box;
+}

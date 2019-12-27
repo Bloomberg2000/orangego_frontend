@@ -39,16 +39,6 @@ export default class TitleBar extends React.Component {
                             <Title level={2}>{title}</Title>
                         </Col>
                         <Col xs={3} md={1}>
-                            {/*<Route render={({match, history}) => {*/}
-                            {/*    return (*/}
-                            {/*        <Badge count={"登录"}>*/}
-                            {/*            <Avatar style={{margin: "0 0 0.75em 0.6em"}} size={32} icon="user"*/}
-                            {/*              -p      onClick={() => {*/}
-                            {/*                        history.push('/login');*/}
-                            {/*                    }}/>*/}
-                            {/*        </Badge>*/}
-                            {/*    )*/}
-                            {/*}}/>*/}
                             <LogInOrSignInModal/>
                         </Col>
                     </Row> :

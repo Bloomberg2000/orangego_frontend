@@ -63,19 +63,38 @@ export default class LongCommentCard extends React.Component {
                             <Row>
                                 <Title level={3}>{this.props.commentTitle}</Title>
                             </Row>
-                            <Row>
-                                <div dangerouslySetInnerHTML={{
-                                    __html: this.props.commentContent
-                                }}/>
-                            </Row>
                             <Row type="flex" justify="start" align="middle" style={{padding: '5px 0'}}>
                                 <Avatar src={this.props.authorPic} style={{margin: '0 10px 0 0'}}/>
                                 <Text type="secondary" style={{padding: '3px'}}>{this.props.authorName}</Text>
-                                <Rate disabled allowHalf style={{marginBottom: '6px'}}
+                                <Text type="secondary" style={{margin: '0 5px'}}>评论</Text>
+                                <a href={"/movie/" + this.props.movieId}>{this.props.movieName}</a>
+                                <Rate disabled allowHalf style={{marginLeft: '10px', marginBottom: '1px'}}
                                       defaultValue={Math.round(this.props.movieScore) / 2}/>
                                 <Text type="secondary" style={{marginLeft: '5px'}}>{this.props.editTime}</Text>
                             </Row>
-                            <Row style={{padding: '10px 0'}}>
+                        </Col>
+                        {/*<Route render={({match, history}) => {*/}
+                        {/*    return (*/}
+                        {/*        <Col xs={5} md={3} xl={2}>*/}
+                        {/*            <div className="movie-pic"*/}
+                        {/*                 style={{*/}
+                        {/*                     backgroundImage: 'url(' + this.props.moviePic + ')',*/}
+                        {/*                     backgroundPosition: 'top right',*/}
+                        {/*                     backgroundRepeat: 'no-repeat',*/}
+                        {/*                     backgroundSize: 'contain'*/}
+                        {/*                 }}*/}
+                        {/*                 onClick={() => {*/}
+                        {/*                     history.push("/movie/" + this.props.movieId);*/}
+                        {/*                 }}/>*/}
+                        {/*        </Col>*/}
+                        {/*    )*/}
+                        {/*}}/>*/}
+                        <Col span={24}  style={{padding: '10px'}}>
+                            <div dangerouslySetInnerHTML={{
+                                __html: this.props.commentContent
+                            }}/>
+                        </Col>
+                        <Col span={24} style={{padding: '10px'}}>
                                 <span key="comment-basic-like">
                                     <Tooltip title="有用">
                                       <Icon
@@ -86,7 +105,7 @@ export default class LongCommentCard extends React.Component {
                                     </Tooltip>
                                     <span style={{paddingLeft: 8, cursor: 'auto'}}>{likes}</span>
                                  </span>
-                                <span key='comment-basic-dislike' style={{paddingLeft: '10px'}}>
+                            <span key='comment-basic-dislike' style={{paddingLeft: '10px'}}>
                                     <Tooltip title="没用">
                                       <Icon
                                           type="dislike"
@@ -96,25 +115,7 @@ export default class LongCommentCard extends React.Component {
                                     </Tooltip>
                                 <span style={{paddingLeft: 6, cursor: 'auto'}}>{dislikes}</span>
                               </span>
-                            </Row>
                         </Col>
-                        <Route render={({match, history}) => {
-                            return (
-                                <Col xs={5} md={3} xl={2}>
-                                    <div className="movie-pic"
-                                         style={{
-                                             backgroundImage: 'url(' + this.props.moviePic + ')',
-                                             backgroundPosition: 'top right',
-                                             backgroundRepeat: 'no-repeat',
-                                             backgroundSize: 'contain'
-                                         }}
-                                         onClick={() => {
-                                             history.push("/movie/" + this.props.movieId);
-                                         }}/>
-                                </Col>
-                            )
-                        }}/>
-
                     </Row>
                 </Card>
             </div>
