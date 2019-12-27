@@ -159,7 +159,7 @@ export default class ColorThief {
                     }
                     const data = binaryString.join('')
                     const base64 = window.btoa(data)
-                    resolve("data:image/png;base64," + base64)
+                    resolve("movieData:image/png;base64," + base64)
                 }
             }
             xhr.send()

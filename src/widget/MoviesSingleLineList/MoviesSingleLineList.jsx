@@ -46,7 +46,7 @@ export default class MoviesSingleLineList extends React.Component {
     }
 
     getPageSize = () => {
-        if (this.state.windowWidth >= 1200) {
+        if (this.state.windowWidth >= 1600) {
             // xxl 及以上
             return 8;
         } else if (this.state.windowWidth >= 992) {
@@ -141,7 +141,7 @@ export default class MoviesSingleLineList extends React.Component {
                       dataSource={this.state.dataArray}
                       renderItem={item => (
                           <List.Item key={item.key} style={{padding: '5px'}}>
-                              <MoviePreviewCard name={item.name} score={item.score}
+                              <MoviePreviewCard id={item.id} name={item.name} score={item.score}
                                                 imgSrc={item.imgSrc}/>
                           </List.Item>
                       )}

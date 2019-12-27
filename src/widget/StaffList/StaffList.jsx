@@ -4,6 +4,7 @@ import {Avatar, Button, Col, Divider, Icon, Row, Typography} from "antd";
 import * as PropTypes from "prop-types";
 import Swiper from "swiper";
 import 'swiper/css/swiper.css'
+import {Route} from "react-router";
 
 const {Title} = Typography;
 export default class StaffList extends React.Component {
@@ -106,18 +107,28 @@ export default class StaffList extends React.Component {
                                 {
                                     this.props.data.map((item) => {
                                         return (
-                                            <div key={item.key} className="swiper-slide" style={{width:'200px'}}>
-                                                <div className={"staff-card"} key={"1"}>
-                                                    <div className={"staff-card-img"}>
-                                                        <Avatar size={128} src={item.staffPic}/>
-                                                    </div>
-                                                    <div className={"staff-card-text"}>
-                                                        <div>
-                                                            <span style={{fontSize:'20px',fontWeight:'bold'}}>{item.staffName}</span><br/>
-                                                            <span style={{color: "rgba(0,0,0,0.6)"}}>{item.staffWork}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div key={item.key} className="swiper-slide" style={{width: '200px'}}>
+                                                <Route render={({match, history}) => {
+                                                    return (
+                                                        <div className={"staff-card"} key={"1"}
+                                                             onClick={() => {
+                                                                 history.push('/staff/' + item.staffID);
+                                                             }}>
+                                                            <div className={"staff-card-img"}>
+                                                                <Avatar size={128} src={item.staffPic}/>
+                                                            </div>
+                                                            <div className={"staff-card-text"}>
+                                                                <div>
+                                                                <span style={{
+                                                                    fontSize: '20px',
+                                                                    fontWeight: 'bold'
+                                                                }}>{item.staffName}</span><br/>
+                                                                    <span
+                                                                        style={{color: "rgba(0,0,0,0.6)"}}>{item.staffWork}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>)
+                                                }}/>
                                             </div>
                                         );
                                     })

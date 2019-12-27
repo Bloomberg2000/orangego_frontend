@@ -1,5 +1,4 @@
 import React from "react";
-import QueueAnim from 'rc-queue-anim';
 import Banner from "../../widget/Banner/Banner";
 
 import TitleBar from "../../widget/TitleBar/TitleBar";
@@ -118,17 +117,6 @@ const moviesData = [
         imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"
     },
     {name: '罗小黑战记', score: 8.6, imgSrc: "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568288336.jpg"},
-];
-
-const moviesGalleryFilterList = [
-    {value: "热门", key: '1'},
-    {value: "最新", key: '2'},
-    {value: "豆瓣高分", key: '3'},
-    {value: "冷门佳片", key: '4'},
-    {value: "华语", key: '5'},
-    {value: "欧美", key: '6'},
-    {value: "韩国", key: '7'},
-    {value: "日本", key: '8'},
 ];
 
 const longCommentList = [
@@ -276,18 +264,16 @@ export default class Home extends React.Component {
         return (
             <div id="home">
                 {/*<QueueAnim delay={300}>*/}
-                    <TitleBar key="a" title={"为您推荐"}/>
-                    <Banner key="b" data={bannerData}/>
-                    <MoviesSingleLineList key="c" withTitle={true} title={"正在热映"} data={moviesData} isFirstNode={true}
-                                          withShowMoreButton={true}/>
-                    <MoviesSingleLineList key="d" withTitle={true} title={"热门电影"} data={moviesData}
-                                          withShowMoreButton={true}
-                                          withFilter={true}
-                                          filterList={moviesGalleryFilterList}/>
-                    <LongCommentPreviewList key="e" withTitle={true} title={"最受欢迎的影评"} data={longCommentList}
-                                            isLastNode={true}
-                                            withShowMoreButton={true}
-                                            withMoviePicShow={true}/>
+                <TitleBar key="a" title={"为您推荐"}/>
+                <Banner key="b" data={bannerData}/>
+                <MoviesSingleLineList key="c" withTitle={true} title={"正在热映"} data={moviesData} isFirstNode={true}
+                                      withShowMoreButton={true}/>
+                <MoviesSingleLineList key="d" withTitle={true} title={"热门电影"} data={moviesData}
+                                      withShowMoreButton={true}/>
+                <LongCommentPreviewList key="e" withTitle={true} title={"最受欢迎的影评"} data={longCommentList}
+                                        isLastNode={true}
+                                        withShowMoreButton={true}
+                                        withMoviePicShow={true}/>
                 {/*</QueueAnim>*/}
             </div>
         );
